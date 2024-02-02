@@ -1,12 +1,14 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInputHandler : MonoBehaviour
 {
 
+ 
+    [HideInInspector] public PlayerController player;
     private PlayerInput playerInput;
-    public Player player;
 
     public Vector2 RawMovementInput { get; private set; }
     public Vector2 RawDashDirectionInput { get; private set; }
@@ -15,12 +17,13 @@ public class PlayerInputHandler : MonoBehaviour
     public int NormInputY { get; private set; }
 
     public Vector2 InputVector;
-    public float moveSpeed;
+
+    public PlayerDataSO playerDataSO;
 
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>(); 
-        player = GetComponent<Player>();
+        player = GetComponent<PlayerController>();
     }
 
     public void OnMoveInput(InputAction.CallbackContext context)
@@ -46,17 +49,14 @@ public class PlayerInputHandler : MonoBehaviour
             else NormInputY = 1;
         }
 
-        Debug.Log(RawMovementInput);
-        NormInputX = (int)(RawMovementInput * Vector2.right).normalized.x;
-        NormInputY = (int)(RawMovementInput * Vector2.up).normalized.y;
         InputVector = new Vector2(NormInputX, NormInputY);
-        player.RB.velocity = InputVector * 10;
-        Debug.Log(InputVector);
-
-        //player.InputHandler.InputVector.Normalize();
-        //    player.totalSpeed = 4 * player.InputHandler.moveSpeed;
-        //   
-        //    player.InputHandler.moveSpeed = Mathf.Clamp(player.InputHandler.InputVector.magnitude, 0.0f, 1.0f);
-        
     }
+
+    public void OnDashInput()
+    {
+        Debug.Log("Dash");
+    }
+
+
+ 
 }
