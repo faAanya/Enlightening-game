@@ -17,7 +17,6 @@ public class PlayerIdleState : IState
     }
     void IState.Update()
     {
-        Debug.Log(player.InputHandler.InputVector);
         if (player.InputHandler.InputVector != Vector2.zero)
         {
             player.StateMachine.ChangeState(player.StateMachine.PlayerMoveState);

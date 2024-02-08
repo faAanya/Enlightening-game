@@ -16,9 +16,14 @@ public class PlayerInputHandler : MonoBehaviour
     public int NormInputX { get; private set; }
     public int NormInputY { get; private set; }
 
+
+    public Vector2 inputPosition;
+
     public Vector2 InputVector;
 
     public PlayerDataSO playerDataSO;
+
+    public bool canUseInputs = true;
 
     private void Start()
     {
@@ -52,7 +57,15 @@ public class PlayerInputHandler : MonoBehaviour
         InputVector = new Vector2(NormInputX, NormInputY);
     }
 
-    public void OnDashInput()
+    public void OnTrajectoryInput(InputAction.CallbackContext context)
+    {
+       
+            inputPosition = context.ReadValue<Vector2>();
+        
+       
+    }
+
+    public void OnDashInput(InputAction.CallbackContext context)
     {
         Debug.Log("Dash");
     }
