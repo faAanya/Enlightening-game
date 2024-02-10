@@ -2,11 +2,11 @@ using System.Collections;
 using UnityEngine;
 
 
-public class Weapon : MonoBehaviour, IAttack
+public class TeslaLaserWeaponLogic : MonoBehaviour, IAttack
 {
     public WeaponDataSO weaponData;
     [HideInInspector]
-    public PlayerController player;
+    public PlayerController playerController;
     public Vector3 mousePos;
 
     public Transform center;
@@ -21,22 +21,22 @@ public class Weapon : MonoBehaviour, IAttack
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     private void Update()
     {
         Attack();
         if (canAttack) { StartCoroutine(Shot()); }
-        Debug.Log(player.InputHandler.canUseInputs);
+        Debug.Log(playerController.InputHandler.canUseInputs);
     }
 
     public void Attack() 
     {
 
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        mousePos = mainCam.ScreenToWorldPoint(player.InputHandler.inputPosition);
-        Vector3 direction = mousePos - endPoint.transform.position;
+        mousePos = mainCam.ScreenToWorldPoint(playerController.InputHandler.inputPosition);
+       
         Vector3 rotation = transform.position - mousePos;
 
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
@@ -47,14 +47,14 @@ public class Weapon : MonoBehaviour, IAttack
 
     public IEnumerator Shot()
     {
-        player.InputHandler.canUseInputs = false;
+        playerController.InputHandler.canUseInputs = false;
         yield return new WaitForSeconds(weaponData.duration);
         canAttack = false;
         weapon.gameObject.SetActive(false);
         yield return new WaitForSeconds(weaponData.coolDown);
         weapon.gameObject.SetActive(true);
         canAttack = true;
-        player.InputHandler.canUseInputs = true;
+        playerController.InputHandler.canUseInputs = true;
     }
 
 

@@ -4,5 +4,22 @@ using UnityEngine;
 
 public class PlayerWeaponController : MonoBehaviour
 {
-    public Weapon[] weapons;
+    public GameObject[] weapons;
+
+    private void Start()
+    {
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            weapons[i].GetComponent<Transform>().transform.position = Vector3.zero;
+        }
+    }
+    private void Update()
+    {
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            weapons[i].GetComponent<Transform>().transform.position = transform.position;
+        }
+       
+        
+    }
 }

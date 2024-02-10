@@ -9,4 +9,5 @@ public class WeaponDataSO :ScriptableObject
     public float duration;
     public float coolDown;
     public float range;
+    public int amount;
 }
