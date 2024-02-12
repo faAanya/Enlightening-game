@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -7,17 +8,15 @@ public class TeslaLaserWeaponLogic : MonoBehaviour, IAttack
     public WeaponDataSO weaponData;
     [HideInInspector]
     public PlayerController playerController;
-    public Vector3 mousePos;
-
-    public Transform center;
-    public Transform hitPoint;
+    private Vector3 mousePos;
 
     private Camera mainCam;
 
-    public bool canAttack = true;
+    private bool canAttack = true;
 
    public GameObject weapon;
-    public GameObject endPoint;
+
+
 
     private void Start()
     {
@@ -26,12 +25,11 @@ public class TeslaLaserWeaponLogic : MonoBehaviour, IAttack
 
     private void Update()
     {
-        Attack();
-        if (canAttack) { StartCoroutine(Shot()); }
-        Debug.Log(playerController.InputHandler.canUseInputs);
+        Rotate();
+        if (canAttack) { StartCoroutine(Blink()); }
     }
 
-    public void Attack() 
+    public void Rotate() 
     {
 
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -40,12 +38,11 @@ public class TeslaLaserWeaponLogic : MonoBehaviour, IAttack
         Vector3 rotation = transform.position - mousePos;
 
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-
-        endPoint.transform.position = new Vector3(weaponData.range * Mathf.Cos(((rot + 180) * Mathf.PI) / 180) + transform.position.x, weaponData.range * Mathf.Sin((rot + 180) * Mathf.PI / 180) + transform.position.y, 0);
-
+        transform.rotation = Quaternion.Euler(0, 0, rot + 180f);
+        //transform.position = new Vector3(weaponData.range * Mathf.Cos(((rot + 180) * Mathf.PI) / 180) + transform.position.x, weaponData.range * Mathf.Sin((rot + 180) * Mathf.PI / 180) + transform.position.y, 0);
     }
 
-    public IEnumerator Shot()
+    public IEnumerator Blink()
     {
         playerController.InputHandler.canUseInputs = false;
         yield return new WaitForSeconds(weaponData.duration);
@@ -58,8 +55,4 @@ public class TeslaLaserWeaponLogic : MonoBehaviour, IAttack
     }
 
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(center.transform.position, hitPoint.transform.position);
-    }
 }

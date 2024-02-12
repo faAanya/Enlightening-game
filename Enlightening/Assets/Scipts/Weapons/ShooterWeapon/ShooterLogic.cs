@@ -1,15 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Net;
-using System.Security.Cryptography;
 using UnityEngine;
-using UnityEngine.EventSystems;
+
 
 public class ShooterLogic : MonoBehaviour, IAttack
 {
-    public WeaponDataSO weaponData;
     private PlayerController playerController;
 
+    [HideInInspector]
     public Vector3 mousePos;
 
     private Camera mainCam;
@@ -26,20 +23,20 @@ public class ShooterLogic : MonoBehaviour, IAttack
     }
     private void Update()
     {
-        Attack();
+        Rotate();
     }
 
-    public void Attack()
+    public void Rotate()
     {
 
         mousePos = mainCam.ScreenToWorldPoint(playerController.InputHandler.inputPosition);
 
-        //Vector3 direction = mousePos - transform.position;
         Vector3 rotation = transform.position - mousePos;
 
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0, 0, rot + 90f);
+        
         if (canAttack)
         {
             StartCoroutine(Shoot(interval, bullet));

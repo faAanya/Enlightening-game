@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullets : MonoBehaviour
@@ -7,8 +5,11 @@ public class Bullets : MonoBehaviour
     public Vector3 mousePos;
     private Camera mainCam;
     private PlayerController playerController;
+    public PlayerDataSO playerData;
     public Rigidbody2D rb;
     public float force;
+
+    public WeaponDataSO weaponData;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,11 @@ public class Bullets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (gameObject.transform.position.x >= weaponData.range || gameObject.transform.position.y >= weaponData.range 
+           || gameObject.transform.position.x <= -weaponData.range || gameObject.transform.position.y <= -weaponData.range)
+        {
+            Destroy(gameObject);
+        }
     }
+
 }

@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public StateMachine StateMachine { get; private set; }
 
     public PlayerDataSO playerDataSO;
+    public float health;
 
     private void Awake()
     {
