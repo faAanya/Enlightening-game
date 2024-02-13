@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 15060032458110332}
   - component: {fileID: 4435820494076059347}
   - component: {fileID: 8258050487132978748}
+  - component: {fileID: -4656591049736501622}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: PlayerWeapon
@@ -172,7 +173,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mousePos: {x: 0, y: 0, z: 0}
-  playerData: {fileID: 11400000, guid: 8351697c3a7500342b5c00eef8a76514, type: 2}
   rb: {fileID: 15060032458110332}
-  force: 2
-  weaponData: {fileID: 11400000, guid: 35dd988393436224a99c376f0f87c44b, type: 2}
+  force: 4
+  startPos: {x: 0, y: 0, z: 0}
+--- !u!114 &-4656591049736501622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122749487159817498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b38dd3b64bd254a8e39bd8f555a9a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  duration: 0
+  coolDown: 0
+  range: 12
+  amount: 0

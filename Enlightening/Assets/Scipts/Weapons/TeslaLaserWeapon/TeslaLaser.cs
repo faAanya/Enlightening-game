@@ -1,11 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
 public class TeslaLaserWeaponLogic : MonoBehaviour, IAttack
 {
-    public WeaponDataSO weaponData;
     [HideInInspector]
     public PlayerController playerController;
     private Vector3 mousePos;
@@ -14,8 +12,9 @@ public class TeslaLaserWeaponLogic : MonoBehaviour, IAttack
 
     private bool canAttack = true;
 
-   public GameObject weapon;
 
+    [Header("WeaponParametres")]
+   public GameObject blinker;
 
 
     private void Start()
@@ -45,11 +44,11 @@ public class TeslaLaserWeaponLogic : MonoBehaviour, IAttack
     public IEnumerator Blink()
     {
         playerController.InputHandler.canUseInputs = false;
-        yield return new WaitForSeconds(weaponData.duration);
+        yield return new WaitForSeconds(blinker.GetComponent<Weapon>().duration);
         canAttack = false;
-        weapon.gameObject.SetActive(false);
-        yield return new WaitForSeconds(weaponData.coolDown);
-        weapon.gameObject.SetActive(true);
+        blinker.gameObject.SetActive(false);
+        yield return new WaitForSeconds(blinker.GetComponent<Weapon>().coolDown);
+        blinker.gameObject.SetActive(true);
         canAttack = true;
         playerController.InputHandler.canUseInputs = true;
     }

@@ -45,9 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce7c6a8210af30043a878d4e5121a8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: b7f54cfc8d770774a99c3cb5359516db, type: 2}
   playerController: {fileID: 0}
-  weapon: {fileID: 1276680004694123691}
+  blinker: {fileID: 1276680004694123691}
 --- !u!1 &1276680004694123691
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,9 +58,10 @@ GameObject:
   - component: {fileID: 7880055801747464908}
   - component: {fileID: 8439471269786411539}
   - component: {fileID: 7420136071126609888}
+  - component: {fileID: 2855800476792905344}
   m_Layer: 0
   m_Name: RotatePos
-  m_TagString: Untagged
+  m_TagString: PlayerWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,3 +178,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2855800476792905344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276680004694123691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b38dd3b64bd254a8e39bd8f555a9a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 15
+  duration: 2
+  coolDown: 2
+  range: 0
+  amount: 0

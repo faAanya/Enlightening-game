@@ -14,12 +14,13 @@ public class ShooterLogic : MonoBehaviour, IAttack
     public bool canAttack = true;
 
     public GameObject bullet;
-
     public float interval;
+    
     private void Start()
     {
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+   
     }
     private void Update()
     {

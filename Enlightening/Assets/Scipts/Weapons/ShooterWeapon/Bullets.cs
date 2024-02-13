@@ -5,19 +5,20 @@ public class Bullets : MonoBehaviour
     public Vector3 mousePos;
     private Camera mainCam;
     private PlayerController playerController;
-    public PlayerDataSO playerData;
     public Rigidbody2D rb;
     public float force;
+    private Weapon weapon;
 
-    public WeaponDataSO weaponData;
+    public Vector3 startPos;
     // Start is called before the first frame update
     void Start()
     {
+        startPos = transform.position;
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
         mousePos = mainCam.ScreenToWorldPoint(playerController.InputHandler.inputPosition);
-
+       
         Vector3 direction = mousePos - transform.position;
         Vector3 rotation = transform.position - mousePos;
 
@@ -25,14 +26,16 @@ public class Bullets : MonoBehaviour
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0, 0, rot + 90f);
+        weapon = GetComponent<Weapon>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.transform.position.x >= weaponData.range || gameObject.transform.position.y >= weaponData.range 
-           || gameObject.transform.position.x <= -weaponData.range || gameObject.transform.position.y <= -weaponData.range)
+        if (Mathf.Abs(startPos.x - gameObject.transform.position.x) >= weapon.range || Mathf.Abs(startPos.y - gameObject.transform.position.y) >= weapon.range
+           || Mathf.Abs(startPos.x - gameObject.transform.position.x) <= weapon.range || Mathf.Abs(startPos.y - gameObject.transform.position.y) <= -weapon.range)
         {
+            
             Destroy(gameObject);
         }
     }
