@@ -32,10 +32,18 @@ public class Bullets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Mathf.Abs(startPos.x - gameObject.transform.position.x) >= weapon.range || Mathf.Abs(startPos.y - gameObject.transform.position.y) >= weapon.range
-           || Mathf.Abs(startPos.x - gameObject.transform.position.x) <= weapon.range || Mathf.Abs(startPos.y - gameObject.transform.position.y) <= -weapon.range)
-        {
+        //if (Mathf.Abs(startPos.x - gameObject.transform.position.x) >= weapon.range || Mathf.Abs(startPos.y - gameObject.transform.position.y) >= weapon.range
+        //   || Mathf.Abs(startPos.x - gameObject.transform.position.x) <= weapon.range || Mathf.Abs(startPos.y - gameObject.transform.position.y) <= -weapon.range)
+        //{
             
+            
+        //}
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
             Destroy(gameObject);
         }
     }
