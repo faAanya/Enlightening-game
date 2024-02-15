@@ -79,4 +79,4 @@ MonoBehaviour:
   mousePos: {x: 0, y: 0, z: 0}
   canAttack: 1
   bullet: {fileID: 1122749487159817498, guid: 12ee82bf738bc724a8be953517aa6fe8, type: 3}
-  interval: 1
+  interval: 0.2

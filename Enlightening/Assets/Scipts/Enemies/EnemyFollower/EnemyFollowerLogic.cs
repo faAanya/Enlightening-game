@@ -7,6 +7,8 @@ public class EnemyFollowerLogic : MonoBehaviour
     private PlayerController playerController;
     public Enemy enemy;
 
+    public GameObject orb;
+
     void Start()
     {
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
@@ -19,7 +21,9 @@ public class EnemyFollowerLogic : MonoBehaviour
         gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, playerController.transform.position, 0.001f);   
         if(enemy.health <= 0)
         {
+            Instantiate(orb, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            
         }
     }
 
@@ -27,7 +31,7 @@ public class EnemyFollowerLogic : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerHealth>().DecreaseHealth(enemy.damage);
+            collision.gameObject.GetComponent<Player>().DecreaseHealth(enemy.damage);
             Debug.Log("enemy hit");
         }
 

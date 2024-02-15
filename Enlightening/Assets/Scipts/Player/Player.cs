@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public float health;
+    public float score;
 
     public void IncreaseHealth(float buff)
     {
@@ -13,6 +14,14 @@ public class PlayerHealth : MonoBehaviour
     public void DecreaseHealth(float damage)
     {
         health -= damage;
+    } 
+    public void IncreaseScore() 
+    {
+        score++; 
+    } 
+    public void ResetScore()
+    {
+        score = 0;
     }
     void Start()
     {

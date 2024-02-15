@@ -43,14 +43,14 @@ public class TeslaLaserWeaponLogic : MonoBehaviour, IAttack
 
     public IEnumerator Blink()
     {
-        playerController.InputHandler.canUseInputs = false;
-        yield return new WaitForSeconds(blinker.GetComponent<Weapon>().duration);
+
         canAttack = false;
+        yield return new WaitForSeconds(blinker.GetComponent<Weapon>().duration);
+        
         blinker.gameObject.SetActive(false);
         yield return new WaitForSeconds(blinker.GetComponent<Weapon>().coolDown);
         blinker.gameObject.SetActive(true);
         canAttack = true;
-        playerController.InputHandler.canUseInputs = true;
     }
 
 
