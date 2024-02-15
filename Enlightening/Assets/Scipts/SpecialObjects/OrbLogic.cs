@@ -9,6 +9,7 @@ public class OrbLogic : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<Player>().IncreaseScore();
+            //ScoreSliderController.ScoreSlider?.Invoke();
             Destroy(gameObject);
         }
     }

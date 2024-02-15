@@ -32,6 +32,7 @@ public class EnemyFollowerLogic : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<Player>().DecreaseHealth(enemy.damage);
+            //SliderController.HelthSliderChange?.Invoke(enemy.damage);
             Debug.Log("enemy hit");
         }
 
