@@ -12,6 +12,8 @@ public class Spawner : MonoBehaviour
     private bool canSpawn = true;
     private PlayerController playerController;
     public Vector3 testPos;
+
+    public int amount;
     void Start()
     {
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
@@ -40,7 +42,11 @@ public class Spawner : MonoBehaviour
         canSpawn = false;
         yield return new WaitForSeconds(interval);
         canSpawn = true;
-        Instantiate(enemy, vectors[rnd.Next(0,2)], Quaternion.identity);
+        for (int i = 0; i < rnd.Next(1, amount+1); i++)
+        {
+            Instantiate(enemy, vectors[rnd.Next(0, 2)], Quaternion.identity);
+        }
+      
         StartCoroutine(SpawnEnemy(interval, enemy));
     }
  

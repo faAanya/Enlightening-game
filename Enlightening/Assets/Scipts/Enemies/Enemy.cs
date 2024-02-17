@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour
 {
     public float health;
     public float damage;
+
+    public float coolDown;
     void Start()
     {
         
