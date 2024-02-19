@@ -7,6 +7,7 @@ TagManager:
   - TeslaLaser
   - Enemy
   - PlayerWeapon
+  - Orb
   layers:
   - Default
   - TransparentFX
