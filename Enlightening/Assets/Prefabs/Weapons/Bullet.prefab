@@ -193,3 +193,4 @@ MonoBehaviour:
   coolDown: 0
   range: 12
   amount: 0
+  coll: {fileID: 0}

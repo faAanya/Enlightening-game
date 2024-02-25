@@ -13,33 +13,23 @@ public class Enemy : MonoBehaviour
     public GameObject orb;
 
     public int enemyCost;
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            collision.gameObject.GetComponent<Player>().DecreaseHealth(damage);
-            //SliderController.HelthSliderChange?.Invoke(enemy.damage);
-            Debug.Log("enemy hit");
-        }
+    // private void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //     if (collision.gameObject.tag == "Player")
+    //     {
+    //         collision.gameObject.GetComponent<Player>().DecreaseHealth(damage);
+    //         //SliderController.HelthSliderChange?.Invoke(enemy.damage);
+    //         Debug.Log("enemy hit");
+    //     }
 
-        if (collision.gameObject.tag == "PlayerWeapon")
-        {
-            health -= collision.gameObject.GetComponent<Weapon>().damage;
-            Debug.Log("player hit");
-        }
-    }
+    //     if (collision.gameObject.tag == "PlayerWeapon")
+    //     {
+    //         health -= collision.gameObject.GetComponent<WeaponClass>().damage;
+    //         Debug.Log("player hit");
+    //     }
+    // }
 
-    public void Die()
-    {
-        for (int i = 0; i <= enemyCost; i++)
-        {
-            System.Random rnd = new System.Random();
-            Instantiate(orb, transform.position + new Vector3((float)rnd.NextDouble(), (float)rnd.NextDouble(),0), Quaternion.identity);
-        }
-        
-        Destroy(gameObject);
-    }
-
+   
     void Start()
     {
         
@@ -53,5 +43,16 @@ public class Enemy : MonoBehaviour
             Die();
 
         }
+    } 
+    public void Die()
+    {
+        for (int i = 0; i <= enemyCost; i++)
+        {
+            System.Random rnd = new System.Random();
+            Instantiate(orb, transform.position + new Vector3((float)rnd.NextDouble(), (float)rnd.NextDouble(),0), Quaternion.identity);
+        }
+        
+        Destroy(gameObject);
     }
+
 }

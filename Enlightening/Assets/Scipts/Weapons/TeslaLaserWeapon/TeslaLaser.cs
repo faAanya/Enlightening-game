@@ -2,54 +2,51 @@ using System.Collections;
 using UnityEngine;
 
 
-public class TeslaLaserWeaponLogic : MonoBehaviour, IAttack
+public class TeslaLaserWeaponLogic : WeaponClass
 {
-    [HideInInspector]
-    public PlayerController playerController;
-    private Vector3 mousePos;
+   
+   public GameObject[] projectiles;
 
-    private Camera mainCam;
-
-    private bool canAttack = true;
-
-
-    [Header("WeaponParametres")]
-   public GameObject blinker;
-
-
-    private void Start()
+    public override void Start()
     {
-        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+       base.Start();
+      
+        projectiles = new GameObject[number];
+        for (int i = 0, j = 0; i < projectiles.Length && j < 360; i++, j += 360 / projectiles.Length)
+        {
+          
+            projectiles[i] = Instantiate(projectile, transform.position, Quaternion.Euler(0,0, j + 90f));
+            projectiles[i].transform.SetParent(gameObject.transform);
+            
+        }
     }
 
-    private void Update()
+    public override void Update()
     {
-        Rotate();
-        if (canAttack) { StartCoroutine(Blink()); }
+        base.Update();
+        Rotate(gameObject, mousePosition);
+        if (canAttack) {
+           
+            StartCoroutine(Blink()); 
+        }
+
     }
-
-    public void Rotate() 
-    {
-
-        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        mousePos = mainCam.ScreenToWorldPoint(playerController.InputHandler.inputPosition);
-       
-        Vector3 rotation = transform.position - mousePos;
-
-        float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rot + 180f);
-        //transform.position = new Vector3(weaponData.range * Mathf.Cos(((rot + 180) * Mathf.PI) / 180) + transform.position.x, weaponData.range * Mathf.Sin((rot + 180) * Mathf.PI / 180) + transform.position.y, 0);
-    }
-
     public IEnumerator Blink()
     {
 
         canAttack = false;
-        yield return new WaitForSeconds(blinker.GetComponent<Weapon>().duration);
-        
-        blinker.gameObject.SetActive(false);
-        yield return new WaitForSeconds(blinker.GetComponent<Weapon>().coolDown);
-        blinker.gameObject.SetActive(true);
+        yield return new WaitForSeconds(duration);
+
+        for (int i = 0, j = 0; i < projectiles.Length && j < 360; i++, j += 360 / projectiles.Length)
+        {
+            projectiles[i].gameObject.SetActive(false);
+        }
+        yield return new WaitForSeconds(coolDown);
+        for (int i = 0, j = 0; i < projectiles.Length && j < 360; i++, j += 360 / projectiles.Length)
+        {
+            projectiles[i].gameObject.SetActive(true);
+        }
+     
         canAttack = true;
     }
 

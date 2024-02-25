@@ -76,7 +76,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065b49bd968183349905f0d71e139e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePos: {x: 0, y: 0, z: 0}
+  damage: 5
+  duration: 2
+  coolDown: 3
+  size: 0
+  number: 0
   canAttack: 1
-  bullet: {fileID: 1122749487159817498, guid: 12ee82bf738bc724a8be953517aa6fe8, type: 3}
-  interval: 0.2
+  projectile: {fileID: 1122749487159817498, guid: 12ee82bf738bc724a8be953517aa6fe8, type: 3}

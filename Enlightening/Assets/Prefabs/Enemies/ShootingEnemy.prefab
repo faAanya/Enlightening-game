@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2748080957141620697}
   - component: {fileID: 7153341702267966853}
   - component: {fileID: 8043201573809568962}
+  - component: {fileID: -508222364475805992}
   m_Layer: 0
   m_Name: ShootingEnemy
   m_TagString: Enemy
@@ -65,7 +66,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 5
   bullet: {fileID: 380348149158654199, guid: 22ead4a32b843e44cb21df31a79f3a81, type: 3}
-  interval: 1
   speed: 3
 --- !u!212 &8043201573809568962
 SpriteRenderer:
@@ -119,3 +119,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &-508222364475805992
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5895762460525640285}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

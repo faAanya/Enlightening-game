@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CometeEnemy : MonoBehaviour
@@ -24,7 +23,6 @@ public class CometeEnemy : MonoBehaviour
     void Update()
     {
 
- 
         transform.position = Vector3.MoveTowards(gameObject.transform.position, pos, .07f);
         if (canFly)
         {
@@ -52,7 +50,7 @@ public class CometeEnemy : MonoBehaviour
         yield return new WaitForSeconds(enemy.coolDown);
   
         transform.position = GenerateRandomPos();
-        
+    
         pos = -transform.position;
         canFly = true;
     }

@@ -1,22 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.Android;
 
-public class NearProjectilesSpawner : MonoBehaviour
+public class NearProjectilesSpawner : WeaponClass
 {
     private GameObject[] projectiles;
-    public GameObject projectile;
-    private Weapon weapon;
-    private bool canRotate = true;
-
     public AnimationCurve curve;
-    void Start()
+    public override void Start()
     {
 
-        weapon = projectile.GetComponent<Weapon>();
-        Debug.Log("Meow");
-        projectiles = new GameObject[weapon.amount];
+        base.Start();
+       
+
+        projectiles = new GameObject[number];
         for (int i = 0; i < projectiles.Length; i++)
         {
             projectiles[i] = projectile;
@@ -25,23 +23,31 @@ public class NearProjectilesSpawner : MonoBehaviour
         for (int i = 0, j = 0; i < projectiles.Length && j < 360; i++, j += 360 / projectiles.Length)
         {
 
-            Vector3 pos = new Vector3(weapon.range * Mathf.Cos((j * Mathf.PI) / 180) + transform.position.x, weapon.range * Mathf.Sin((j * Mathf.PI) / 180) + transform.position.y, 0);
+            Vector3 pos = new Vector3(size * Mathf.Cos(j * Mathf.PI / 180) + transform.position.x, size * Mathf.Sin(j * Mathf.PI / 180) + transform.position.y, 0);
            GameObject prj = Instantiate(projectiles[i], pos, Quaternion.identity);
              prj.transform.parent = gameObject.transform;
         }
     }
 
-    // Update is called once per frame
-    void Update()
+ 
+    public override void Update()
     {
-        if (canRotate)
+        base.Update();
+    //     for (int i = 0; i < projectiles.Length; i++)
+    // {
+    //     if(projectiles[i].GetComponent<Collider2D>().IsTouching(GameObject.FindGameObjectWithTag("Enemy").GetComponent<Collider2D>())){
+    //         Debug.Log("Touch");
+    //     }
+    // }
+
+        if (canAttack)
         {
-            StartCoroutine(Rota());
+            StartCoroutine(Rotate());
         }
        
     }
-    public IEnumerator Rota()
-    {    canRotate = false;
+    public IEnumerator Rotate()
+    {    canAttack = false;
         float timer = 0;
         for (int i = 0; i < 91; i++)
         {
@@ -50,8 +56,8 @@ public class NearProjectilesSpawner : MonoBehaviour
             yield return new WaitForSeconds(curve.Evaluate(timer));
         }
    
-        yield return new WaitForSeconds(2f);
-        canRotate = true; 
+        yield return new WaitForSeconds(coolDown);
+        canAttack = true; 
 
 
     }

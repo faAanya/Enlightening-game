@@ -21,7 +21,6 @@ public class EnemyBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Meow");
         transform.position = Vector3.MoveTowards(transform.position, aim, speed * Time.deltaTime);
     }
     private void OnTriggerEnter2D(Collider2D collision)
