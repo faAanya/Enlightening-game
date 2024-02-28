@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &293285232023999514
+--- !u!1 &4230305630575425802
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1502854922857874260}
-  - component: {fileID: 744401430013601852}
+  - component: {fileID: 2837805152963130256}
+  - component: {fileID: 5080246172779714825}
   m_Layer: 0
   m_Name: Tesla
   m_TagString: Untagged
@@ -17,33 +17,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1502854922857874260
+--- !u!4 &2837805152963130256
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293285232023999514}
+  m_GameObject: {fileID: 4230305630575425802}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 26.535255, y: 0.37907508, z: 3.7907507}
+  m_LocalScale: {x: 26.535255, y: 0.37907508, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &744401430013601852
+--- !u!114 &5080246172779714825
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293285232023999514}
+  m_GameObject: {fileID: 4230305630575425802}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce7c6a8210af30043a878d4e5121a8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
-  projectiles: []
+  damage: 5
+  duration: 2
+  coolDown: 3
+  size: 0
+  number: 2
+  canAttack: 1
   projectile: {fileID: 5485123076833616316, guid: ed7546d72ca4ec045985d18e2c20014b, type: 3}
+  isAvaliable: 0
+  projectiles: []

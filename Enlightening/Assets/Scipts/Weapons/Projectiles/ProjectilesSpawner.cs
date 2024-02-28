@@ -12,7 +12,7 @@ public class NearProjectilesSpawner : WeaponClass
     {
 
         base.Start();
-       
+
 
         projectiles = new GameObject[number];
         for (int i = 0; i < projectiles.Length; i++)
@@ -24,40 +24,35 @@ public class NearProjectilesSpawner : WeaponClass
         {
 
             Vector3 pos = new Vector3(size * Mathf.Cos(j * Mathf.PI / 180) + transform.position.x, size * Mathf.Sin(j * Mathf.PI / 180) + transform.position.y, 0);
-           GameObject prj = Instantiate(projectiles[i], pos, Quaternion.identity);
-             prj.transform.parent = gameObject.transform;
+            GameObject prj = Instantiate(projectiles[i], pos, Quaternion.identity);
+            prj.transform.parent = gameObject.transform;
         }
     }
 
- 
+
     public override void Update()
     {
         base.Update();
-    //     for (int i = 0; i < projectiles.Length; i++)
-    // {
-    //     if(projectiles[i].GetComponent<Collider2D>().IsTouching(GameObject.FindGameObjectWithTag("Enemy").GetComponent<Collider2D>())){
-    //         Debug.Log("Touch");
-    //     }
-    // }
 
         if (canAttack)
         {
             StartCoroutine(Rotate());
         }
-       
+
     }
     public IEnumerator Rotate()
-    {    canAttack = false;
+    {
+        canAttack = false;
         float timer = 0;
         for (int i = 0; i < 91; i++)
         {
-             timer += Time.deltaTime;
+            timer += Time.deltaTime;
             transform.Rotate(0, 0, 1);
             yield return new WaitForSeconds(curve.Evaluate(timer));
         }
-   
+
         yield return new WaitForSeconds(coolDown);
-        canAttack = true; 
+        canAttack = true;
 
 
     }

@@ -4,26 +4,45 @@ using UnityEngine;
 
 public class PlayerWeaponController : MonoBehaviour
 {
-    public GameObject[] weapons;
+    public GameObject[] weaponsGameObjects;
 
     private void Start()
     {
-        for (int i = 0; i < weapons.Length; i++)
+
+
+
+        for (int i = 0; i < weaponsGameObjects.Length; i++)
         {
-            weapons[i].GetComponent<Transform>().transform.position = Vector3.zero;
-            Debug.Log(weapons[i].GetComponent<WeaponClass>().damage);
-        
+            weaponsGameObjects[i].GetComponent<Transform>().transform.position = Vector3.zero;
+            ShowActiveWeapon();
+
         }
     }
     private void Update()
     {
-        for (int i = 0; i < weapons.Length; i++)
+
+        ShowActiveWeapon();
+        for (int i = 0; i < weaponsGameObjects.Length; i++)
         {
-            weapons[i].GetComponent<Transform>().transform.position = transform.position;
-        
-            
+            weaponsGameObjects[i].GetComponent<Transform>().transform.position = transform.position;
+
+
         }
-       
-        
+    }
+
+    public void ShowActiveWeapon()
+    {
+        for (int i = 0; i < weaponsGameObjects.Length; i++)
+        {
+            if (!weaponsGameObjects[i].GetComponent<WeaponClass>().isAvaliable)
+            {
+                weaponsGameObjects[i].GetComponent<WeaponClass>().gameObject.SetActive(false);
+            }
+            if (weaponsGameObjects[i].GetComponent<WeaponClass>().isAvaliable)
+            {
+                weaponsGameObjects[i].GetComponent<WeaponClass>().gameObject.SetActive(true);
+            }
+
+        }
     }
 }

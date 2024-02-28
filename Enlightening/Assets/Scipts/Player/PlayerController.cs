@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
     
     public StateMachine StateMachine { get; private set; }
 
-    public PlayerDataSO playerDataSO;
     public float health;
+    public float movementSpeed;
 
     private void Awake()
     {
