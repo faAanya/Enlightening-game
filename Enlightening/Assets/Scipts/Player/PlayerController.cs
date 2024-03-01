@@ -6,12 +6,15 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D RB;
     public PlayerInputHandler InputHandler { get; private set; }
-    
+
     public StateMachine StateMachine { get; private set; }
 
+
+    #region 
     public float health;
     public float movementSpeed;
-
+    public int score;
+    #endregion
     private void Awake()
     {
         InputHandler = GetComponent<PlayerInputHandler>();
@@ -28,5 +31,22 @@ public class PlayerController : MonoBehaviour
     {
         StateMachine.Update();
     }
-    
+
+    public void IncreaseHealth(float buff)
+    {
+        health += buff;
+    }
+    public void DecreaseHealth(float damage)
+    {
+        health -= damage;
+    }
+    public void IncreaseScore()
+    {
+        score++;
+    }
+    public void ResetScore()
+    {
+        score = 0;
+    }
+
 }

@@ -23,29 +23,33 @@ public class UpgraderUI : MonoBehaviour
     {
         for (int i = 0; i < upgradesText.Length; i++)
         {
-            int playerIndexUpgrade = 0, weaponIndexUpgrade = 0, upgradeToOpen = 0, randomWeaponToUpgrade = 0;
-            float playerModifierUpgrade = 0, weaponModifierUpgrade = 0;
+
             System.Random random = new System.Random();
             int t = random.Next(0, upgradesClass.upgrades.Length + 1); //generate random upgrade
 
+            int playerIndexUpgrade = random.Next(0, 2), upgradeToOpen = random.Next(0, upgradesClass.upgrades.Length), randomWeaponToUpgrade = random.Next(0, upgradesClass.weapons.Count);
+            float playerModifierUpgrade = (float)random.NextDouble(), weaponModifierUpgrade = (float)random.NextDouble();
+
+            if (!upgradesClass.weapons[randomWeaponToUpgrade].isAvaliable)
+            {
+                upgradeToOpen = 1;
+            }
+            else
+            {
+                upgradeToOpen = 0;
+            }
+
             if (t == upgradesClass.upgrades.Length)
             {
-                playerIndexUpgrade = random.Next(0, 2);
-                playerModifierUpgrade = (float)random.NextDouble(); //generate random player characteristic to change and modifier
                 upgradesText[i].text = upgradesClass.ChangePlayerCharacteristicsText(playerIndexUpgrade, playerModifierUpgrade);
             }
             else
             {
-                weaponIndexUpgrade = random.Next(0, 4);
-                weaponModifierUpgrade = (float)random.NextDouble(); //generate random weapon characteristic to change and modifier
-
-                upgradeToOpen = random.Next(0, upgradesClass.upgrades.Length);
-                randomWeaponToUpgrade = random.Next(0, upgradesClass.weapons.Count);
-
                 upgradesText[i].text = upgradesClass.upgradesTexts[upgradeToOpen]
-                    (upgradesClass.weapons[randomWeaponToUpgrade], weaponIndexUpgrade, weaponModifierUpgrade);
+                    (upgradesClass.weapons[randomWeaponToUpgrade], upgradeToOpen, weaponModifierUpgrade);
             }
-            buttons[i].onClick.AddListener(() => upgradesClass.GenerateUpdate(t, playerIndexUpgrade, playerModifierUpgrade, weaponIndexUpgrade, weaponModifierUpgrade, upgradeToOpen, randomWeaponToUpgrade));
+            buttons[i].onClick.AddListener(() => upgradesClass.GenerateUpdate(t, playerIndexUpgrade, playerModifierUpgrade, weaponModifierUpgrade, upgradeToOpen, randomWeaponToUpgrade));
+            buttons[i].onClick.AddListener(() => canvas.gameObject.SetActive(false));
         }
 
 

@@ -18,7 +18,7 @@ public class Bullets : MonoBehaviour
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
         mousePos = mainCam.ScreenToWorldPoint(playerController.InputHandler.inputPosition);
-       
+
         Vector3 direction = mousePos - transform.position;
         Vector3 rotation = transform.position - mousePos;
 
@@ -32,17 +32,15 @@ public class Bullets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Mathf.Abs(startPos.x - gameObject.transform.position.x) >= weapon.range || Mathf.Abs(startPos.y - gameObject.transform.position.y) >= weapon.range
-        //   || Mathf.Abs(startPos.x - gameObject.transform.position.x) <= weapon.range || Mathf.Abs(startPos.y - gameObject.transform.position.y) <= -weapon.range)
-        //{
-            
-            
-        //}
+        if (Vector2.Distance(gameObject.transform.position, startPos) > weapon.range)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
         }

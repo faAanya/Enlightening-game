@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
@@ -65,26 +66,29 @@ public class UpgradesClass : MonoBehaviour
 
     }
 
-
-    void OnTriggerEnter2D(Collider2D other)
+    public void ShowUI()
     {
-        if (other.gameObject.tag == "Player")
-        {
-            canvas.gameObject.SetActive(true);
-            upgraderUI.GenerateUI();
-        }
+        canvas.gameObject.SetActive(true);
+        upgraderUI.GenerateUI();
     }
 
-    public void GenerateUpdate(int t, int playerIndexUpgrade, float playerModifierUpgrade, int weaponIndexUpgrade, float weaponModifierUpgrade, int upgradeToOpen, int randomWeaponToUpgrade)
+
+    public void GenerateUpdate(int t, int playerIndexUpgrade, float playerModifierUpgrade, float weaponModifierUpgrade, int upgradeToOpen, int randomWeaponToUpgrade)
     {
-        Debug.Log("Entered button");
+        Debug.Log($"Entered button {t} {upgradeToOpen} {weaponModifierUpgrade} {upgradeToOpen} {randomWeaponToUpgrade} {weapons[randomWeaponToUpgrade].name}");
         if (t == upgrades.Length)
         {
             ChangePlayerCharacteristics(playerController, playerIndexUpgrade, playerModifierUpgrade);
         }
         else
         {
-            upgrades[upgradeToOpen](weapons[randomWeaponToUpgrade], weaponIndexUpgrade, weaponModifierUpgrade);
+
+            upgrades[upgradeToOpen](weapons[randomWeaponToUpgrade], upgradeToOpen, weaponModifierUpgrade);
+            //SetWeaponAvaliable(weapons[randomWeaponToUpgrade], upgradeToOpen, weaponModifierUpgrade);
+
+            //ChangeRandomCharacteristicOfRandomWeaponText(weapons[randomWeaponToUpgrade], upgradeToOpen, weaponModifierUpgrade);
+
+            // upgrades[upgradeToOpen](weapons[randomWeaponToUpgrade], upgradeToOpen, weaponModifierUpgrade);
         }
     }
 
@@ -104,22 +108,22 @@ public class UpgradesClass : MonoBehaviour
 
     public string ChangePlayerCharacteristicsText(int index, float modifier)
     {
+        string str = "";
         switch (index)
         {
             case 0:
-                return $" player health + {modifier}%";
+                str = $" Player health + {modifier}%";
                 break;
             case 1:
-                return $" player speed + {modifier}%";
+                str = $" Player speed + {modifier}%";
                 break;
         }
-        return "Mistake";
+        return str;
     }
 
 
     public void ChangeRandomCharacteristicOfRandomWeapon(WeaponClass weapon, int index, float modifier)
     {
-
         switch (index)
         {
             case 0:
@@ -139,25 +143,25 @@ public class UpgradesClass : MonoBehaviour
 
     public string ChangeRandomCharacteristicOfRandomWeaponText(WeaponClass weapon, int index, float modifier)
     {
-
+        string str = "";
         switch (index)
         {
             case 0:
-                return $" {weapon.name} damage + {modifier}%";
+                str = $" {weapon.name} damage + {modifier}%";
                 break;
             case 1:
 
-                return $" {weapon.name} duration + {modifier}%";
+                str = $" {weapon.name} duration + {modifier}%";
                 break;
             case 2:
 
-                return $" {weapon.name} cooldown + {modifier}%";
+                str = $" {weapon.name} cooldown + {modifier}%";
                 break;
             case 3:
-                return $" {weapon.name} number + 1";
+                str = $" {weapon.name} number + 1";
                 break;
         }
-        return "Mistake";
+        return str;
     }
 
     public void SetWeaponAvaliable(WeaponClass weapon, int index, float modifier)
