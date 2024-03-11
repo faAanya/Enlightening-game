@@ -14,26 +14,24 @@ public class Enemy : MonoBehaviour
 
     public int enemyCost;
 
-    void Start()
-    {
 
-    }
 
     // Update is called once per frame
     void Update()
     {
+
         if (health <= 0)
         {
             Die();
-
         }
     }
     public void Die()
     {
-        for (int i = 0; i <= enemyCost; i++)
+        for (int i = 0; i < enemyCost; i++)
         {
             System.Random rnd = new System.Random();
             Instantiate(orb, transform.position + new Vector3((float)rnd.NextDouble(), (float)rnd.NextDouble(), 0), Quaternion.identity);
+
         }
 
         Destroy(gameObject);

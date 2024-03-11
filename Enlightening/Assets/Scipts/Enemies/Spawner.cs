@@ -28,26 +28,26 @@ public class Spawner : MonoBehaviour
         {
             StartCoroutine(SpawnEnemy(interval, enemy));
         }
-     
+
     }
     private IEnumerator SpawnEnemy(float interval, GameObject enemy)
     {
         System.Random rnd = new System.Random();
         Vector3 PosX = playerController.transform.position + new Vector3(10 - 20 * rnd.Next(0, 2), rnd.Next(-10, +20));
         Vector3 PosY = playerController.transform.position + new Vector3(rnd.Next(-10, +20), 10 - 20 * rnd.Next(0, 2));
-       
+
 
         List<Vector3> vectors = new List<Vector3>() { PosX, PosY };
 
         canSpawn = false;
         yield return new WaitForSeconds(interval);
         canSpawn = true;
-        for (int i = 0; i < rnd.Next(1, amount+1); i++)
+        for (int i = 0; i < rnd.Next(1, amount + 1); i++)
         {
-            Instantiate(enemy, vectors[rnd.Next(0, 2)], Quaternion.identity);
+            Instantiate(enemy, gameObject.transform.position, Quaternion.identity);
         }
-      
+
         StartCoroutine(SpawnEnemy(interval, enemy));
     }
- 
+
 }
