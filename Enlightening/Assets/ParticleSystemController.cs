@@ -43,7 +43,6 @@ public class ParticleSystemController : MonoBehaviour
         Vector3 rotation = playerController.transform.position.normalized;
 
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        Debug.Log(rot);
         gameObject.transform.rotation = Quaternion.Euler(rot, -90, 90);
     }
 }

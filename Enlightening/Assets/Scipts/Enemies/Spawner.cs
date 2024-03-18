@@ -12,10 +12,27 @@ public class Spawner : MonoBehaviour
     private bool canSpawn = true;
     private PlayerController playerController;
     public Vector3 testPos;
+    public float health;
 
     public int amount;
-    void Start()
+
+    SpawnerOfEnemySpawners spawnerOfEnemySpawners;
+    public SpawnerKillCounter spawnerKillCounter;
+
+    // void OnEnable()
+    // {
+    //     SpawnerOfEnemySpawners.OnSpawnerDie += () => { spawnerKillCounter.counter++; };
+    // }
+
+
+    // void OnDisable()
+    // {
+    //     SpawnerOfEnemySpawners.OnSpawnerDie -= () => { spawnerKillCounter.counter++; };
+    // }
+    void Awake()
     {
+        spawnerKillCounter = GameObject.FindGameObjectWithTag("SpawnerKillCounter").GetComponent<SpawnerKillCounter>();
+        spawnerOfEnemySpawners = GameObject.FindGameObjectWithTag("SpawnerSpawner").GetComponent<SpawnerOfEnemySpawners>();
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         cam = Camera.main;
     }
@@ -23,12 +40,22 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (health <= 0)
+        {
+            Die();
+        }
+        SpawnerOfEnemySpawners.OnSpawnerDie -= () => { spawnerKillCounter.counter++; };
 
         if (canSpawn)
         {
             StartCoroutine(SpawnEnemy(interval, enemy));
         }
+    }
+    public void Die()
+    {
 
+        spawnerKillCounter.counter--;
+        Destroy(gameObject);
     }
     private IEnumerator SpawnEnemy(float interval, GameObject enemy)
     {

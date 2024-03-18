@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 
 
-public class MainMenuButtonsController : MonoBehaviour
+public class MainMenuController : MonoBehaviour
 {
 
     [Header("Buttons")]
@@ -13,28 +13,35 @@ public class MainMenuButtonsController : MonoBehaviour
     public Button quitButton;
 
     public Button Level1;
+    public Button Level2;
 
     [Header("UI")]
 
-    public GameObject MainButtons;
+    public GameObject[] UIs;
     public GameObject LevelChooser;
+
+    public GameObject Title;
 
 
     // Start is called before the first frame update
     void Start()
     {
         startButton.onClick.AddListener(() => { StartCoroutine(MoveMainButtons()); });
-        Level1.onClick.AddListener(() => { SceneManager.LoadScene("SampleScene"); });
+        Level1.onClick.AddListener(() => { SceneManager.LoadScene("SampleScene 1"); });
+        Level2.onClick.AddListener(() => { SceneManager.LoadScene("SampleScene 2"); });
         quitButton.onClick.AddListener(() => { Application.Quit(); });
-
     }
 
     public IEnumerator MoveMainButtons()
     {
-        for (int i = 0; i <= 950; i++)
+        for (int i = 0; i <= 150; i++)
         {
-            MainButtons.transform.position = new Vector3(MainButtons.transform.position.x, MainButtons.transform.position.y + 2.5f);
-            yield return new WaitForSeconds(.0005f);
+            for (int j = 0; j < UIs.Length; j++)
+            {
+                UIs[j].transform.position = new Vector3(UIs[j].transform.position.x, UIs[j].transform.position.y + 7f);
+            }
+
+            yield return null;
         }
         LevelChooser.SetActive(true);
 

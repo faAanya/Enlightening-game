@@ -9,6 +9,9 @@ TagManager:
   - PlayerWeapon
   - Orb
   - WeaponController
+  - SpawnerSpawner
+  - Spawner
+  - SpawnerKillCounter
   layers:
   - Default
   - TransparentFX

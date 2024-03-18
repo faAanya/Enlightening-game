@@ -9,7 +9,7 @@ public class UpgraderUI : MonoBehaviour
 {
     public UpgradesClass upgradesClass;
 
-    public Canvas canvas;
+    public GameObject canvas;
     public TMP_Text[] upgradesText;
 
     public Button[] buttons;
@@ -17,7 +17,7 @@ public class UpgraderUI : MonoBehaviour
     void Start()
     {
         upgradesClass = gameObject.GetComponent<UpgradesClass>();
-        canvas.gameObject.SetActive(false);
+        canvas.SetActive(false);
     }
     public void GenerateUI()
     {
@@ -49,7 +49,7 @@ public class UpgraderUI : MonoBehaviour
                     (upgradesClass.weapons[randomWeaponToUpgrade], upgradeToOpen, weaponModifierUpgrade);
             }
             buttons[i].onClick.AddListener(() => upgradesClass.GenerateUpdate(t, playerIndexUpgrade, playerModifierUpgrade, weaponModifierUpgrade, upgradeToOpen, randomWeaponToUpgrade));
-            buttons[i].onClick.AddListener(() => canvas.gameObject.SetActive(false));
+            buttons[i].onClick.AddListener(() => canvas.SetActive(false));
         }
 
 

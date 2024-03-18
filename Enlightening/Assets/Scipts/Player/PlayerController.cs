@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     #endregion
     private void Awake()
     {
+        Time.timeScale = 1;
         InputHandler = GetComponent<PlayerInputHandler>();
     }
 
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(Time.timeScale);
         StateMachine.Update();
     }
 

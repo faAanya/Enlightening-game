@@ -8,8 +8,6 @@ public class Player : MonoBehaviour
     public float health;
     public float score;
 
-
-
     void Start()
     {
 
