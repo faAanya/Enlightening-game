@@ -15,7 +15,6 @@ public class SpawnerKillCounter : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(counter);
         spawnerCounter.text = $"Spawners left {counter}";
     }
 

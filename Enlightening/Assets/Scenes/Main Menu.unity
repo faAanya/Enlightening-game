@@ -1634,6 +1634,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e101e1612a9b25e4ca197ccdfd9b13c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelsSO: {fileID: 11400000, guid: bd94ba9833d9e354d9e2e972648a4b68, type: 2}
+  buttons:
+  - {fileID: 2035264378}
+  - {fileID: 413038681}
   ButtonDictClass:
     newDictItems:
     - isAvailable: 1

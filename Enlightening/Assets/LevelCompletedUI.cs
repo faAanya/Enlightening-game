@@ -19,7 +19,8 @@ public class LevelCompletedUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.FindGameObjectWithTag("SpawnerKillCounter").GetComponent<SpawnerKillCounter>().counter <= 0)
+        if (GameObject.FindGameObjectWithTag("SpawnerKillCounter").GetComponent<SpawnerKillCounter>().counter <= 0
+        && GameObject.FindGameObjectsWithTag("Enemy") != null)
         {
             ShowUI();
         }
@@ -28,7 +29,7 @@ public class LevelCompletedUI : MonoBehaviour
     public void ShowUI()
     {
         levelCompletedUI.SetActive(true);
-        Time.timeScale = 0;
+        // Time.timeScale = 0;
     }
 
 }

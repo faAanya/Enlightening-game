@@ -9,7 +9,13 @@ using UnityEngine.UI;
 
 public class LevelController : MonoBehaviour
 {
-    public static LevelController LevelManager;
+    public static LevelController instance;
+
+    public LevelsSO levelsSO;
+
+    public Button[] buttons;
+
+    //public static Action OnLevelOpened;
 
     [SerializeField]
     public LevelButtonsDict ButtonDictClass;
@@ -47,19 +53,23 @@ public class LevelController : MonoBehaviour
 
     void Start()
     {
-        ButtonDict = ButtonDictClass.ToDictionary();
+        //     ButtonDict = ButtonDictClass.ToDictionary();
 
-        foreach (var item in ButtonDict.Keys.ToList())
+        //     foreach (var item in ButtonDict.Keys.ToList())
+        //     {
+        //         if (ButtonDict[item])
+        //         {
+        //             item.interactable = true;
+        //         }
+        //         else
+        //         {
+        //             item.interactable = false;
+        //         }
+        //     }
+        // }
+        for (int i = 0; i < buttons.Length; i++)
         {
-            if (ButtonDict[item])
-            {
-                item.interactable = true;
-            }
-            else
-            {
-                item.interactable = false;
-            }
+            buttons[i].interactable = levelsSO.openedLevels[i];
         }
     }
-
 }

@@ -251,7 +251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &89432323
 Transform:
   m_ObjectHideFlags: 0
@@ -1721,7 +1721,6 @@ GameObject:
   - component: {fileID: 835628933}
   - component: {fileID: 835628932}
   - component: {fileID: 835628936}
-  - component: {fileID: 835628934}
   m_Layer: 0
   m_Name: PlayerUI
   m_TagString: Untagged
@@ -1745,7 +1744,7 @@ RectTransform:
   - {fileID: 844919570}
   - {fileID: 1128569576}
   - {fileID: 8927686516163342394}
-  - {fileID: 1936833265}
+  - {fileID: 1767523260}
   m_Father: {fileID: 213336745}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1799,19 +1798,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &835628934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835628929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3139a67ecdca5f042ab5b6e19f45076d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelCompletedUI: {fileID: 0}
 --- !u!114 &835628936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7775,6 +7761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quitButton: {fileID: 1897835332}
+  levelsSO: {fileID: 11400000, guid: bd94ba9833d9e354d9e2e972648a4b68, type: 2}
 --- !u!1 &1593239565
 GameObject:
   m_ObjectHideFlags: 0
@@ -8166,7 +8153,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1473433522}
-  m_Father: {fileID: 1936833265}
+  m_Father: {fileID: 835628930}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8606,7 +8593,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1897835333}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1473433523}
+        m_TargetAssemblyTypeName: LevelCompletedController, Assembly-CSharp
+        m_MethodName: OpenNextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1897835333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8733,56 +8732,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1936833264
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1936833265}
-  - component: {fileID: 1936833266}
-  m_Layer: 0
-  m_Name: LevelComplete
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1936833265
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1936833264}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1767523260}
-  m_Father: {fileID: 835628930}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1936833266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1936833264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3139a67ecdca5f042ab5b6e19f45076d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelCompletedUI: {fileID: 1767523259}
 --- !u!1 &1941889395
 GameObject:
   m_ObjectHideFlags: 0
