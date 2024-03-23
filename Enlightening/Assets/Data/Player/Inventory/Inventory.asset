@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e43f3f037868f4e43af49c7dd27278df, type: 3}
-  m_Name: Levels
+  m_Script: {fileID: 11500000, guid: a47f2b09517150e4e9b270c2f8e40e64, type: 3}
+  m_Name: Inventory
   m_EditorClassIdentifier: 
-  openedLevels: 0101
+  staticInventorySize: 3
+  weapons: []

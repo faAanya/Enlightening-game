@@ -29,7 +29,7 @@ public class LevelCompletedUI : MonoBehaviour
     public void ShowUI()
     {
         levelCompletedUI.SetActive(true);
-        // Time.timeScale = 0;
+        Time.timeScale = 0;
     }
 
 }

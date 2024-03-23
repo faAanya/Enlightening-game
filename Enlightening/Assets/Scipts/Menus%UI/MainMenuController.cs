@@ -18,6 +18,8 @@ public class MainMenuController : MonoBehaviour
     [Header("UI")]
 
     public GameObject[] UIs;
+    public GameObject Collection;
+    public Button Accept;
     public GameObject LevelChooser;
 
     public GameObject Title;
@@ -30,6 +32,7 @@ public class MainMenuController : MonoBehaviour
         Level1.onClick.AddListener(() => { SceneManager.LoadScene("SampleScene 1"); });
         Level2.onClick.AddListener(() => { SceneManager.LoadScene("SampleScene 2"); });
         quitButton.onClick.AddListener(() => { Application.Quit(); });
+        Accept.onClick.AddListener(() => StartCoroutine(MoveLevelChooser()));
     }
 
     public IEnumerator MoveMainButtons()
@@ -40,6 +43,20 @@ public class MainMenuController : MonoBehaviour
             {
                 UIs[j].transform.position = new Vector3(UIs[j].transform.position.x, UIs[j].transform.position.y + 7f);
             }
+
+            yield return null;
+        }
+        Collection.SetActive(true);
+
+    }
+    public IEnumerator MoveLevelChooser()
+    {
+        Collection.SetActive(false);
+        for (int i = 0; i <= 280; i++)
+        {
+
+            LevelChooser.transform.position = new Vector3(LevelChooser.transform.position.x - 7f, LevelChooser.transform.position.y);
+
 
             yield return null;
         }

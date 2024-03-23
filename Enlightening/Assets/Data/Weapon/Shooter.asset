@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d4332d4302e9b42a394c4ca1399a94, type: 3}
+  m_Name: Shooter
+  m_EditorClassIdentifier: 
+  weaponImage: {fileID: 21300000, guid: 7df4fedf8e4d72546902b582d2b68e97, type: 3}
+  weaponName: Shooter
+  weaponDescription: Shoots cool as fuck
+  isEquiped: 0
+  weapon: {fileID: 7281374905529682349, guid: 8ef02c42c7eee684fb0c671119e961d9, type: 3}
