@@ -44,7 +44,7 @@ public class Presenter : MonoBehaviour
         inventorySO.weapons.RemoveAt(index);
     }
 
-    void Start()
+    public void Start()
     {
 
         if (inventorySO.weapons.Count <= inventorySO.staticInventorySize - 1)
@@ -57,6 +57,7 @@ public class Presenter : MonoBehaviour
         }
         for (int i = 0; i <= inventoryAndCollectionView.weaponCollectionElements.Count - 1; i++)
         {
+            Debug.Log("Start");
             int tmp = i;
             inventoryAndCollectionView.AddButtons[i].onClick.AddListener(() =>
         {

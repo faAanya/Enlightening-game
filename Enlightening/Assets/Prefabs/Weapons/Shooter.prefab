@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 7281374905529682349}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 9, z: 0}
+  m_LocalPosition: {x: 14.7, y: -4.3, z: 0}
   m_LocalScale: {x: 18.53, y: 18.53, z: 18.53}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -83,4 +83,4 @@ MonoBehaviour:
   number: 0
   canAttack: 1
   projectile: {fileID: 1122749487159817498, guid: 12ee82bf738bc724a8be953517aa6fe8, type: 3}
-  isAvaliable: 0
+  isAvaliable: 1

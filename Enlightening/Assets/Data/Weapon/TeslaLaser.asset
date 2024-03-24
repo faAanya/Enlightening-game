@@ -15,5 +15,5 @@ MonoBehaviour:
   weaponImage: {fileID: 21300000, guid: 393f899b069a11948ab90bbe0686202b, type: 3}
   weaponName: TeslaLaser
   weaponDescription: Mixer of painfull hitting and rotation
-  isEquiped: 1
+  isEquiped: 0
   weapon: {fileID: 4230305630575425802, guid: 03071e31b94fa8a4a9a4d47434123bce, type: 3}

@@ -7,7 +7,6 @@ using System.Collections.Generic;
 public class GenerateInventory : MonoBehaviour
 {
     public GameObject inventoryItem;
-    GameObject item;
     public InventorySO inventorySO;
     public List<Button> DeleteButtons;
 

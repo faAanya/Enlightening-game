@@ -51,7 +51,7 @@ MonoBehaviour:
   number: 2
   canAttack: 1
   projectile: {fileID: 3361354098599895119, guid: 813dd478496c71741bfe9541cdf59dc3, type: 3}
-  isAvaliable: 0
+  isAvaliable: 1
   curve:
     serializedVersion: 2
     m_Curve:

@@ -24,6 +24,7 @@ public class MainMenuController : MonoBehaviour
 
     public GameObject Title;
 
+    public Presenter presenter;
 
     // Start is called before the first frame update
     void Start()

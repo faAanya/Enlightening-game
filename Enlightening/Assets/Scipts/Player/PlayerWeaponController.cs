@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class PlayerWeaponController : MonoBehaviour
 {
-    public GameObject[] weaponsGameObjects;
 
-    private void Start()
+
+    public InventorySO inventory;
+    public GameObject[] weaponsGameObjects;
+    private void Awake()
     {
 
+        weaponsGameObjects = new GameObject[inventory.weapons.Count];
+        for (int j = 0; j < inventory.weapons.Count; j++)
+        {
+            GameObject item = Instantiate(inventory.weapons[j].weapon, gameObject.transform.position, Quaternion.identity);
+            item.transform.SetParent(gameObject.transform);
 
-
+            weaponsGameObjects[j] = gameObject.transform.GetChild(j).gameObject;
+        }
         for (int i = 0; i < weaponsGameObjects.Length; i++)
         {
             weaponsGameObjects[i].GetComponent<Transform>().transform.position = Vector3.zero;
