@@ -29,8 +29,28 @@ public class Presenter : MonoBehaviour
     {
         if (canAddWeapon)
         {
-            inventoryItem.isEquiped = true;
-            inventorySO.weapons.Add(inventoryItem);
+            if (inventorySO.weapons.Count > 0)
+            {
+                for (int i = 0; i < inventorySO.weapons.Count; i++)
+                {
+                    if (inventoryItem == inventorySO.weapons[i])
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        inventoryItem.isEquiped = true;
+                        inventorySO.weapons.Add(inventoryItem);
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                inventoryItem.isEquiped = true;
+                inventorySO.weapons.Add(inventoryItem);
+            }
+
         }
         else
         {
