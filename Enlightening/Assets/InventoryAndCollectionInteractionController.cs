@@ -24,9 +24,8 @@ public class InventoryAndCollectionView : MonoBehaviour
     {
 
 
-        for (int i = 0; i < weaponCollectionView.transform.childCount; i++)
+        for (int i = 0; i <= weaponCollectionView.transform.childCount - 1; i++)
         {
-            Debug.Log(weaponCollectionView.transform.GetChild(i).gameObject.name);
 
             weaponCollectionElements.Add(weaponCollectionView.transform.GetChild(i).gameObject);
             AddButtons.Add(weaponCollectionElements[i].gameObject.transform.GetChild(3).gameObject.GetComponent<Button>());

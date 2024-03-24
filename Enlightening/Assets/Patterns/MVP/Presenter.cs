@@ -55,25 +55,24 @@ public class Presenter : MonoBehaviour
         {
             canAddWeapon = false;
         }
-        for (int i = 0; i < inventoryAndCollectionView.AddButtons.Count; i++)
+        for (int i = 0; i <= inventoryAndCollectionView.weaponCollectionElements.Count - 1; i++)
         {
-            Debug.Log($" {inventoryAndCollectionView.weaponCollectionElements[i].name}");
+            int tmp = i;
             inventoryAndCollectionView.AddButtons[i].onClick.AddListener(() =>
         {
-            AddWeaponToInventory(inventoryAndCollectionView.weaponCollectionElements[i].
-            GetComponent<WeaponCollectionUI>().weaponSO);
+
+            AddWeaponToInventory(inventoryAndCollectionView.weaponCollectionElements[tmp].GetComponent<WeaponCollectionUI>().weaponSO);
             inventoryAndCollectionView.inventoryView.UpdateUI();
             //OnAddButtonClick.Invoke(inventoryAndCollectionView.weaponCollectionElements[i].GetComponent<WeaponCollectionUI>().weaponSO);
         });
         }
 
-        for (int i = 0; i < inventoryAndCollectionView.inventoryView.DeleteButtons.Count; i++)
+        for (int i = 0; i <= inventoryAndCollectionView.inventoryView.DeleteButtons.Count - 1; i++)
         {
+            int tmp = i;
             inventoryAndCollectionView.inventoryView.DeleteButtons[i].onClick.AddListener(() =>
             {
-                Debug.Log("Clicked");
-
-                DeleteWeaponFromInventory(i);
+                DeleteWeaponFromInventory(tmp);
                 inventoryAndCollectionView.inventoryView.UpdateUI();
             });
         }

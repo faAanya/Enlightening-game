@@ -10,6 +10,8 @@ public class GenerateInventory : MonoBehaviour
     GameObject item;
     public InventorySO inventorySO;
     public List<Button> DeleteButtons;
+
+    public Sprite emptySprite;
     void Start()
     {
 
@@ -31,17 +33,14 @@ public class GenerateInventory : MonoBehaviour
     {
         for (int i = 0; i < gameObject.transform.childCount; i++)
         {
-            // if (inventorySO.weapons[i] == null)
-            // {
-            //     Debug.Log($"{i} Empty item");
-            //     continue;
-            // }
-            if (inventorySO.weapons.Count > 0)
-                if (inventorySO.weapons[i].isEquiped)
+            gameObject.transform.GetChild(i).transform.GetChild(0).gameObject.GetComponent<Image>().sprite = emptySprite;
+            if (inventorySO.weapons.Count <= gameObject.transform.childCount)
+            {
+                for (int j = 0; j < inventorySO.weapons.Count; j++)
                 {
-                    gameObject.transform.GetChild(i).transform.GetChild(0).gameObject.GetComponent<Image>().sprite = inventorySO.weapons[i].weaponImage;
+                    gameObject.transform.GetChild(j).transform.GetChild(0).gameObject.GetComponent<Image>().sprite = inventorySO.weapons[j].weaponImage;
                 }
-
+            }
         }
     }
 

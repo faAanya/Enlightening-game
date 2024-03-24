@@ -8763,8 +8763,9 @@ GameObject:
   - component: {fileID: 5923079191065447205}
   - component: {fileID: 8577836556950493889}
   - component: {fileID: 6926788890163173264}
+  - component: {fileID: 2662589247269302624}
   m_Layer: 5
-  m_Name: Inventory (1)
+  m_Name: Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8839,9 +8840,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22b6edd893305a0449462626ead5e87d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: []
   inventoryItem: {fileID: 8310406892492055685, guid: 053c7512e120d2c44bdf73e13dbc54f2, type: 3}
   inventorySO: {fileID: 11400000, guid: 71a4a6eea7ac101468aeadc905c05ef3, type: 2}
+  DeleteButtons: []
+  emptySprite: {fileID: 0}
 --- !u!114 &6926788890163173264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8868,6 +8870,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &2662589247269302624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7054024489618722272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0863f2542969b03459ce0f3240174a10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7071861314690301327
 GameObject:
   m_ObjectHideFlags: 0

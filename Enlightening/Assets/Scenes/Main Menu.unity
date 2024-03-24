@@ -3669,6 +3669,7 @@ MonoBehaviour:
   inventoryItem: {fileID: 8310406892492055685, guid: 053c7512e120d2c44bdf73e13dbc54f2, type: 3}
   inventorySO: {fileID: 11400000, guid: 71a4a6eea7ac101468aeadc905c05ef3, type: 2}
   DeleteButtons: []
+  emptySprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
 --- !u!1 &1933897331
 GameObject:
   m_ObjectHideFlags: 0
