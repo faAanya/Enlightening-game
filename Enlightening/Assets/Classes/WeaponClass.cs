@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class WeaponClass : MonoBehaviour
 {
+    public string Name;
     public float damage;
     public float duration;
     public float coolDown;

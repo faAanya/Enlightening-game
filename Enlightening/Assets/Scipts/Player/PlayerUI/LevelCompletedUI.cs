@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class LevelCompletedUI : MonoBehaviour
 {
-    private GameObject levelCompleted;
-    SpawnerKillCounter spawnerKillCounter;
 
     public GameObject levelCompletedUI;
     void Start()

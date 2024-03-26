@@ -14,7 +14,7 @@ public class UpgraderUI : MonoBehaviour
 
     public Button[] buttons;
 
-    void Start()
+    void Awake()
     {
         upgradesClass = gameObject.GetComponent<UpgradesClass>();
         canvas.SetActive(false);

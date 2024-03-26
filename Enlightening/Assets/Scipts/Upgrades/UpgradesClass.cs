@@ -33,7 +33,7 @@ public class UpgradesClass : MonoBehaviour
     private UpgraderUI upgraderUI;
     public GameObject canvas;
     #endregion
-    private void Start()
+    private void Awake()
     {
         upgraderUI = gameObject.GetComponent<UpgraderUI>();
 
@@ -104,10 +104,10 @@ public class UpgradesClass : MonoBehaviour
         switch (index)
         {
             case 0:
-                str = $" Player health + {modifier}%";
+                str = $" Player health + {System.Math.Round(modifier, 2)}%";
                 break;
             case 1:
-                str = $" Player speed + {modifier}%";
+                str = $" Player speed + {System.Math.Round(modifier, 2)}%";
                 break;
         }
         return str;
@@ -139,18 +139,18 @@ public class UpgradesClass : MonoBehaviour
         switch (index)
         {
             case 0:
-                str = $" {weapon.name} damage + {modifier}%";
+                str = $" {weapon.Name} damage + {System.Math.Round(modifier, 2)}%";
                 break;
             case 1:
 
-                str = $" {weapon.name} duration + {modifier}%";
+                str = $" {weapon.Name} duration + {System.Math.Round(modifier, 2)}%";
                 break;
             case 2:
 
-                str = $" {weapon.name} cooldown + {modifier}%";
+                str = $" {weapon.Name} cooldown + {System.Math.Round(modifier, 2)}%";
                 break;
             case 3:
-                str = $" {weapon.name} number + 1";
+                str = $" {weapon.Name} number + 1";
                 break;
         }
         return str;

@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerInputHandler : MonoBehaviour
 {
 
- 
+
     [HideInInspector] public PlayerController player;
     private PlayerInput playerInput;
 
@@ -27,7 +27,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Start()
     {
-        playerInput = GetComponent<PlayerInput>(); 
+        playerInput = GetComponent<PlayerInput>();
         player = GetComponent<PlayerController>();
     }
 
@@ -59,10 +59,10 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnTrajectoryInput(InputAction.CallbackContext context)
     {
-       
-            inputPosition = context.ReadValue<Vector2>();
-        
-       
+
+        inputPosition = context.ReadValue<Vector2>();
+
+
     }
 
     public void OnDashInput(InputAction.CallbackContext context)
@@ -71,5 +71,4 @@ public class PlayerInputHandler : MonoBehaviour
     }
 
 
- 
 }
