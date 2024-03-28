@@ -70,5 +70,34 @@ public class PlayerInputHandler : MonoBehaviour
         Debug.Log("Dash");
     }
 
+    public void OnPauseMenuInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            if (Time.timeScale != 0)
+            {
+                PauseMenuUI.OnPauseEnable.Invoke();
+                Time.timeScale = 0;
+            }
+            else
+            {
+                PauseMenuUI.OnPauseDisable.Invoke();
+                Time.timeScale = 1;
+            }
+        }
+
+    }
+
+    public void OnMiniMapInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            MiniMapUI.OnMinimapEnable.Invoke();
+        }
+        if (context.canceled)
+        {
+            MiniMapUI.OnMinimapDisable.Invoke();
+        }
+    }
 
 }
