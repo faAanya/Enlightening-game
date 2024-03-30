@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2640095233203747567}
   - component: {fileID: 219274275362199365}
   - component: {fileID: 635209698941612747}
+  - component: {fileID: 5547883477905255667}
   m_Layer: 0
   m_Name: EnemySpawner 2
   m_TagString: Spawner
@@ -152,6 +153,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.984375, y: 0.984375}
   m_EdgeRadius: 0
+--- !u!114 &5547883477905255667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122007576136796761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1693467092
+      Data2: 1104805769
+      Data3: 325200570
+      Data4: 1348297103
+    Path: event:/Creatures/enemy_spawner_idle
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 15
 --- !u!1 &5657900050646236682
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 public class Presenter : MonoBehaviour
 {
 
@@ -40,6 +37,7 @@ public class Presenter : MonoBehaviour
                     else
                     {
                         inventoryItem.isEquiped = true;
+                        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.equiptionSound, this.transform.position);
                         inventorySO.weapons.Add(inventoryItem);
                         break;
                     }
@@ -48,6 +46,7 @@ public class Presenter : MonoBehaviour
             else
             {
                 inventoryItem.isEquiped = true;
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.equiptionSound, this.transform.position);
                 inventorySO.weapons.Add(inventoryItem);
             }
 
@@ -60,8 +59,15 @@ public class Presenter : MonoBehaviour
     }
     public void DeleteWeaponFromInventory(int index)
     {
-
-        inventorySO.weapons.RemoveAt(index);
+        if (inventorySO.weapons[index] != null)
+        {
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.equiptionSound, this.transform.position);
+            inventorySO.weapons.RemoveAt(index);
+        }
+        else
+        {
+            return;
+        }
     }
 
     public void Start()
@@ -77,7 +83,7 @@ public class Presenter : MonoBehaviour
         }
         for (int i = 0; i <= inventoryAndCollectionView.weaponCollectionElements.Count - 1; i++)
         {
-            Debug.Log("Start");
+
             int tmp = i;
             inventoryAndCollectionView.AddButtons[i].onClick.AddListener(() =>
         {
@@ -111,6 +117,5 @@ public class Presenter : MonoBehaviour
         {
             canAddWeapon = false;
         }
-        Debug.Log(canAddWeapon);
     }
 }

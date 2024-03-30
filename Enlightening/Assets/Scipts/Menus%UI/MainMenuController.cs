@@ -38,8 +38,8 @@ public class MainMenuController : MonoBehaviour
     void Start()
     {
         startButton.onClick.AddListener(() => { StartCoroutine(MoveMainButtons(0f, 7f)); });
-        Level1.onClick.AddListener(() => { SceneManager.LoadScene("SampleScene 1"); });
-        Level2.onClick.AddListener(() => { SceneManager.LoadScene("SampleScene 2"); });
+        Level1.onClick.AddListener(() => { SceneManager.LoadScene("SampleScene 1"); AudioManager.Instance.SetMusicScene(1); });
+        Level2.onClick.AddListener(() => { SceneManager.LoadScene("SampleScene 2"); AudioManager.Instance.SetMusicScene(2); });
         quitButton.onClick.AddListener(() => { Application.Quit(); });
         Accept.onClick.AddListener(() => { StartCoroutine(MoveLevelChooser(-7f, 0f)); StartCoroutine(MoveMainButtons(0f, 7f)); });
     }

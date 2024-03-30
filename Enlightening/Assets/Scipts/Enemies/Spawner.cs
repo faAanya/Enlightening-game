@@ -1,9 +1,10 @@
 using System.Collections;
 using UnityEngine;
-using System;
 using System.Collections.Generic;
-using Unity.Mathematics;
+using FMODUnity;
 
+
+[RequireComponent(typeof(StudioEventEmitter))]
 public class Spawner : MonoBehaviour
 {
     public GameObject enemy;
@@ -19,18 +20,14 @@ public class Spawner : MonoBehaviour
     SpawnerOfEnemySpawners spawnerOfEnemySpawners;
     public SpawnerKillCounter spawnerKillCounter;
 
-    // void OnEnable()
-    // {
-    //     SpawnerOfEnemySpawners.OnSpawnerDie += () => { spawnerKillCounter.counter++; };
-    // }
+    private StudioEventEmitter emitter;
 
 
-    // void OnDisable()
-    // {
-    //     SpawnerOfEnemySpawners.OnSpawnerDie -= () => { spawnerKillCounter.counter++; };
-    // }
+
     void Awake()
     {
+        emitter = AudioManager.Instance.InitializeEventEmitter(FMODEvents.Instance.spawnerIdle, gameObject);
+        emitter.Play();
         spawnerKillCounter = GameObject.FindGameObjectWithTag("SpawnerKillCounter").GetComponent<SpawnerKillCounter>();
         spawnerOfEnemySpawners = GameObject.FindGameObjectWithTag("SpawnerSpawner").GetComponent<SpawnerOfEnemySpawners>();
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
@@ -53,7 +50,7 @@ public class Spawner : MonoBehaviour
     }
     public void Die()
     {
-
+        emitter.Stop();
         spawnerKillCounter.counter--;
         Destroy(gameObject);
     }
