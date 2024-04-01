@@ -7,5 +7,9 @@ public class InventorySO : ScriptableObject
 
     public int staticInventorySize = 3;
     public List<WeaponDataSO> weapons;
+    public List<WeaponDataSO> allWeapons;
+
+
+
 
 }

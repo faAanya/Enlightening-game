@@ -8,6 +8,7 @@ public class FMODEvents : MonoBehaviour
 
     [field: Header("Creatures SFX")]
     [field: SerializeField] public EventReference spawnerIdle { get; private set; }
+    [field: SerializeField] public EventReference enemyDeath { get; private set; }
 
 
     [field: Header("Ambience")]

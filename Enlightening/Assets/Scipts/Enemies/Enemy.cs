@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
             System.Random rnd = new System.Random();
             Instantiate(orb, transform.position + new Vector3((float)rnd.NextDouble(), (float)rnd.NextDouble(), 0), Quaternion.identity);
         }
-
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.enemyDeath, this.transform.position);
         Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)

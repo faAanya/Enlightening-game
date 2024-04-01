@@ -51,6 +51,7 @@ public class Spawner : MonoBehaviour
     public void Die()
     {
         emitter.Stop();
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.enemyDeath, this.transform.position);
         spawnerKillCounter.counter--;
         Destroy(gameObject);
     }

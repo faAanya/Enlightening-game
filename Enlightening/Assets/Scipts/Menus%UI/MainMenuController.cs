@@ -7,9 +7,10 @@ using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
-    public GameObject Title;
+
     [Header("Buttons")]
     public Button startButton;
+    public Button settingsButton;
     public Button quitButton;
     public Button Level1;
     public Button Level2;
@@ -17,6 +18,7 @@ public class MainMenuController : MonoBehaviour
     [Header("UI")]
 
     public GameObject[] UIs;
+    public GameObject Settings;
 
     [Header("Collection")]
 
@@ -29,6 +31,8 @@ public class MainMenuController : MonoBehaviour
     public GameObject LevelChooser;
 
     [Header("Bools")]
+
+    public bool settingsOpened;
     public bool isTitle;
     public bool isCollection;
 
@@ -37,11 +41,37 @@ public class MainMenuController : MonoBehaviour
 
     void Start()
     {
+        settingsOpened = false;
+        Settings.SetActive(settingsOpened);
+
+
         startButton.onClick.AddListener(() => { StartCoroutine(MoveMainButtons(0f, 7f)); });
-        Level1.onClick.AddListener(() => { SceneManager.LoadScene("SampleScene 1"); AudioManager.Instance.SetMusicScene(1); });
-        Level2.onClick.AddListener(() => { SceneManager.LoadScene("SampleScene 2"); AudioManager.Instance.SetMusicScene(2); });
-        quitButton.onClick.AddListener(() => { Application.Quit(); });
-        Accept.onClick.AddListener(() => { StartCoroutine(MoveLevelChooser(-7f, 0f)); StartCoroutine(MoveMainButtons(0f, 7f)); });
+        settingsButton.onClick.AddListener(() =>
+        {
+            settingsOpened = !settingsOpened;
+            Settings.SetActive(settingsOpened);
+        });
+        Level1.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene("SampleScene 1");
+            AudioManager.Instance.SetMusicScene(1);
+        });
+        Level2.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene("SampleScene 2");
+            AudioManager.Instance.SetMusicScene(2);
+        });
+        quitButton.onClick.AddListener(() =>
+        {
+            Application.Quit();
+        });
+        Accept.onClick.AddListener(() =>
+        {
+            StartCoroutine(MoveLevelChooser(-7f, 0f));
+            StartCoroutine(MoveMainButtons(0f, 7f));
+        });
+
+
     }
 
     public IEnumerator MoveMainButtons(float dirX, float dirY)

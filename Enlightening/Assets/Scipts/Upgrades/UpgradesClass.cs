@@ -15,6 +15,7 @@ public class UpgradesClass : MonoBehaviour
     public List<float> playerCharacterstics;
 
     public List<WeaponClass> weapons = new List<WeaponClass>();
+    public List<GameObject> weaponsGO = new List<GameObject>();
 
     #endregion
 
@@ -41,10 +42,10 @@ public class UpgradesClass : MonoBehaviour
         weaponController = GameObject.FindGameObjectWithTag("WeaponController").GetComponent<PlayerWeaponController>();
 
 
-        for (int i = 0; i < weaponController.weaponsGameObjects.Length; i++)
-        {
-            weapons.Add(weaponController.weaponsGameObjects[i].GetComponent<WeaponClass>());
-        }
+        // for (int i = 0; i < weaponController.weaponsGameObjects.Length; i++)
+        // {
+        //     weapons.Add(weaponController.weaponsGameObjects[i].GetComponent<WeaponClass>());
+        // }
 
         playerCharacterstics = new List<float> { playerController.health, playerController.movementSpeed };
 
@@ -76,11 +77,7 @@ public class UpgradesClass : MonoBehaviour
         {
 
             upgrades[upgradeToOpen](weapons[randomWeaponToUpgrade], upgradeToOpen, weaponModifierUpgrade);
-            //SetWeaponAvaliable(weapons[randomWeaponToUpgrade], upgradeToOpen, weaponModifierUpgrade);
 
-            //ChangeRandomCharacteristicOfRandomWeaponText(weapons[randomWeaponToUpgrade], upgradeToOpen, weaponModifierUpgrade);
-
-            // upgrades[upgradeToOpen](weapons[randomWeaponToUpgrade], upgradeToOpen, weaponModifierUpgrade);
         }
     }
 
@@ -158,7 +155,7 @@ public class UpgradesClass : MonoBehaviour
 
     public void SetWeaponAvaliable(WeaponClass weapon, int index, float modifier)
     {
-        weapon.isAvaliable = true;
+        weapon.enabled = true;
     }
 
     public string SetWeaponAvaliableText(WeaponClass weapon, int index, float modifier)

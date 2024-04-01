@@ -37,8 +37,10 @@ public class Presenter : MonoBehaviour
                     else
                     {
                         inventoryItem.isEquiped = true;
+                        //inventoryItem.weapon.GetComponent<WeaponClass>().isAvaliable = true;
                         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.equiptionSound, this.transform.position);
                         inventorySO.weapons.Add(inventoryItem);
+
                         break;
                     }
                 }
@@ -61,6 +63,7 @@ public class Presenter : MonoBehaviour
     {
         if (inventorySO.weapons[index] != null)
         {
+            inventorySO.weapons[index].isEquiped = false;
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.equiptionSound, this.transform.position);
             inventorySO.weapons.RemoveAt(index);
         }

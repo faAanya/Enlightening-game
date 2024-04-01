@@ -30,7 +30,7 @@ public class UpgraderUI : MonoBehaviour
             int playerIndexUpgrade = random.Next(0, 2), upgradeToOpen = random.Next(0, upgradesClass.upgrades.Length), randomWeaponToUpgrade = random.Next(0, upgradesClass.weapons.Count);
             float playerModifierUpgrade = (float)random.NextDouble(), weaponModifierUpgrade = (float)random.NextDouble();
 
-            if (!upgradesClass.weapons[randomWeaponToUpgrade].isAvaliable)
+            if (!upgradesClass.weapons[randomWeaponToUpgrade].enabled)
             {
                 upgradeToOpen = 1;
             }

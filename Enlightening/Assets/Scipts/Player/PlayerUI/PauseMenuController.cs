@@ -7,11 +7,22 @@ public class PauseMenuController : MonoBehaviour
     [Header("Buttons")]
     public Button resumeButton;
     public Button quitButton;
+    public Button settingsButton;
 
-    // Start is called before the first frame update
+
+    [Header("Other")]
+    public bool settingsOpened;
+    public GameObject Settings;
     void Start()
     {
+        settingsOpened = false;
+        Settings.SetActive(settingsOpened);
         resumeButton.onClick.AddListener(() => { PauseMenuUI.OnPauseDisable.Invoke(); });
-        quitButton.onClick.AddListener(() => { Time.timeScale = 1; SceneManager.LoadScene("Main Menu"); });
+        quitButton.onClick.AddListener(() => { Time.timeScale = 1; SceneManager.LoadScene("Main Menu"); AudioManager.Instance.SetMusicScene(0); });
+        settingsButton.onClick.AddListener(() =>
+        {
+            settingsOpened = !settingsOpened;
+            Settings.SetActive(settingsOpened);
+    });
     }
 }
