@@ -11128,7 +11128,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradesClass: {fileID: 1563544765460937635}
   inventory: {fileID: 11400000, guid: 71a4a6eea7ac101468aeadc905c05ef3, type: 2}
-  weaponsGameObjects: []
 --- !u!1 &7097238910278731554
 GameObject:
   m_ObjectHideFlags: 0
@@ -11772,6 +11771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32057b41cd22cd340905a8f83de6dbc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponController: {fileID: 1962348190025249509}
   playerCharacterstics: []
   weapons: []
   weaponsGO: []

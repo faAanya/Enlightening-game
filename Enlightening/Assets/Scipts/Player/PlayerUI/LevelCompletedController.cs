@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using System.Linq;
 using Unity.VisualScripting;
 
-public class LevelCompletedController : MonoBehaviour
+public class LevelCompletedController : MonoBehaviour, IDataPersistence
 {
     [Header("Buttons")]
     public Button quitButton;
@@ -12,7 +12,6 @@ public class LevelCompletedController : MonoBehaviour
 
     void Start()
     {
-
         quitButton.onClick.AddListener(() => { Time.timeScale = 1; OpenNextLevel(); SceneManager.LoadScene("Main Menu"); });
     }
     public void OpenNextLevel()
@@ -30,4 +29,27 @@ public class LevelCompletedController : MonoBehaviour
         }
 
     }
+
+    public void LoadData(GameData gameData)
+    {
+
+        // for (int i = 0; i < gameData.completedLevels.Length; i++)
+        // {
+
+        //     levelsSO.openedLevels[i] = gameData.completedLevels[i];
+
+        // }
+
+    }
+
+    public void SaveData(ref GameData gameData)
+    {
+        // gameData.i = 2;
+        // for (int i = 0; i < gameData.completedLevels.Length; i++)
+        // {
+        //     gameData.completedLevels[i] = levelsSO.openedLevels[i];
+        // }
+
+    }
 }
+

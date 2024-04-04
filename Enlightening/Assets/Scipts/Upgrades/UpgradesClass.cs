@@ -6,7 +6,7 @@ public class UpgradesClass : MonoBehaviour
 
     #region Controllers
     private PlayerController playerController;
-    private PlayerWeaponController weaponController;
+    public PlayerWeaponController weaponController;
     #endregion
 
     #region Stuff to Upgrade
@@ -39,7 +39,7 @@ public class UpgradesClass : MonoBehaviour
         upgraderUI = gameObject.GetComponent<UpgraderUI>();
 
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        weaponController = GameObject.FindGameObjectWithTag("WeaponController").GetComponent<PlayerWeaponController>();
+        //weaponController = GameObject.FindGameObjectWithTag("WeaponController").GetComponent<PlayerWeaponController>();
 
 
         // for (int i = 0; i < weaponController.weaponsGameObjects.Length; i++)

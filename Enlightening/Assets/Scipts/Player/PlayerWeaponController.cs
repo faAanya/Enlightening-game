@@ -63,4 +63,17 @@ public class PlayerWeaponController : MonoBehaviour
 
         // }
     }
+
+
+    public void LoadData(GameData gameData)
+    {
+        inventory.weapons.AddRange(gameData.playerWeaponInventory);
+    }
+
+    public void SaveData(ref GameData gameData)
+    {
+
+        gameData.playerWeaponInventory = inventory.weapons;
+    }
+
 }
