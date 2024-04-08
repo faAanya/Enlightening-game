@@ -8,7 +8,7 @@ using FMODUnity;
 public class Spawner : MonoBehaviour
 {
     public GameObject enemy;
-    public Camera cam;
+    //public Camera cam;
     public float interval;
     private bool canSpawn = true;
     private PlayerController playerController;
@@ -18,7 +18,7 @@ public class Spawner : MonoBehaviour
     public int amount;
 
     SpawnerOfEnemySpawners spawnerOfEnemySpawners;
-    public SpawnerKillCounter spawnerKillCounter;
+    private SpawnerKillCounter spawnerKillCounter;
 
     private StudioEventEmitter emitter;
 
@@ -26,12 +26,13 @@ public class Spawner : MonoBehaviour
 
     void Awake()
     {
-        emitter = AudioManager.Instance.InitializeEventEmitter(FMODEvents.Instance.spawnerIdle, gameObject);
-        emitter.Play();
+
+        // emitter = AudioManager.Instance.InitializeEventEmitter(FMODEvents.Instance.spawnerIdle, gameObject);
+        // emitter.Play();
         spawnerKillCounter = GameObject.FindGameObjectWithTag("SpawnerKillCounter").GetComponent<SpawnerKillCounter>();
         spawnerOfEnemySpawners = GameObject.FindGameObjectWithTag("SpawnerSpawner").GetComponent<SpawnerOfEnemySpawners>();
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        cam = Camera.main;
+        //   cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -50,8 +51,8 @@ public class Spawner : MonoBehaviour
     }
     public void Die()
     {
-        emitter.Stop();
-        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.enemyDeath, this.transform.position);
+        // emitter.Stop();
+        // AudioManager.Instance.PlayOneShot(FMODEvents.Instance.enemyDeath, this.transform.position);
         spawnerKillCounter.counter--;
         Destroy(gameObject);
     }
