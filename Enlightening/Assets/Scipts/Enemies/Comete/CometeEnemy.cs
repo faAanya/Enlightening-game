@@ -25,22 +25,21 @@ public class CometeEnemy : MonoBehaviour
         Debug.Log(canFly);
         transform.position = Vector3.MoveTowards(gameObject.transform.position, pos, .07f);
 
-        if (transform.position != pos)
+        if (enemy.health >= 0)
         {
-            comete.SetActive(true);
+            if (transform.position != pos)
+            {
+                comete.SetActive(true);
+            }
+            else
+            {
+                comete.SetActive(false);
+            }
+            if (canFly)
+            {
+                StartCoroutine(CometeFly());
+            }
         }
-        else
-        {
-            comete.SetActive(false);
-        }
-
-
-        if (canFly)
-        {
-            StartCoroutine(CometeFly());
-        }
-
-
 
     }
 

@@ -17,7 +17,7 @@ public class LevelCompletedController : MonoBehaviour
     void Start()
     {
         iLevel = 1;
-        //quitButton.onClick.AddListener(() => { Time.timeScale = 1; OpenNextLevel(); SceneManager.LoadScene("Main Menu"); });
+        quitButton.onClick.AddListener(() => { Time.timeScale = 1; OpenNextLevel(); SceneManager.LoadScene("Main Menu"); });
     }
     public void OpenNextLevel()
     {

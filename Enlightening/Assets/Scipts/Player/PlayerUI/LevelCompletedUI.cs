@@ -19,7 +19,7 @@ public class LevelCompletedUI : MonoBehaviour
     void Update()
     {
         if (GameObject.FindGameObjectWithTag("SpawnerKillCounter").GetComponent<SpawnerKillCounter>().counter <= 0
-        && GameObject.FindGameObjectsWithTag("Enemy") == null && Map.transform.localScale.x == 150f)
+        && GameObject.FindGameObjectsWithTag("Enemy") == null && Map.transform.localScale.x == 50f)
         {
             ShowUI();
         }

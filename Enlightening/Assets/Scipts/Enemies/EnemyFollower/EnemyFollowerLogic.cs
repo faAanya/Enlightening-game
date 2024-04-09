@@ -16,6 +16,6 @@ public class EnemyFollowerLogic : MonoBehaviour
 
     void Update()
     {
-        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, playerController.transform.position, 0.001f);
+        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, playerController.transform.position, 0.01f);
     }
 }

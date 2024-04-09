@@ -3738,7 +3738,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level Completed!
+  m_text: Path Completed!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 89ab83ce425660d468bc3c43fc20dd1b, type: 2}
   m_sharedMaterial: {fileID: -8929691555904433412, guid: 89ab83ce425660d468bc3c43fc20dd1b, type: 2}
@@ -4963,11 +4963,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e101e1612a9b25e4ca197ccdfd9b13c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelsSO: {fileID: 11400000, guid: bd94ba9833d9e354d9e2e972648a4b68, type: 2}
-  buttons:
-  - {fileID: 3450212835716851329}
-  - {fileID: 6410208633769071222}
   Map: {fileID: 6277080015575678459, guid: 85d6b643d8da8f6479718236a5f2a430, type: 3}
+  levelCompletedUI: {fileID: 6949962752991552534}
 --- !u!1 &5372431335006471389
 GameObject:
   m_ObjectHideFlags: 0
@@ -12054,9 +12051,9 @@ RectTransform:
   - {fileID: 466149039810852240}
   m_Father: {fileID: 8798343487238006799}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 213.7451, y: -42}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6540873360314370880
@@ -13050,7 +13047,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1374318449810632902
 RectTransform:
   m_ObjectHideFlags: 0

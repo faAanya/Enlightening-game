@@ -10,14 +10,12 @@ using UnityEngine.UI;
 
 public class LevelController : MonoBehaviour
 {
-    public LevelsSO levelsSO;
-    public Button[] buttons;
-
     private SpawnerKillCounter spawnerKillCounter;
     SpawnerOfEnemySpawners spawnerOfEnemySpawners;
     public static int iLevel;
 
     public GameObject Map;
+    public LevelCompletedUI levelCompletedUI;
 
 
     void Start()
@@ -33,12 +31,17 @@ public class LevelController : MonoBehaviour
 
     private void Update()
     {
-        if (spawnerKillCounter.counter == 0)
+        if (spawnerKillCounter.counter == 0 && GameObject.FindGameObjectsWithTag("Enemy") == null)
         {
+            if (//GameObject.FindGameObjectWithTag("SpawnerKillCounter").GetComponent<SpawnerKillCounter>().counter <= 0 && GameObject.FindGameObjectsWithTag("Enemy") == null && 
+            Map.transform.localScale.x == 170f)
+            {
+                levelCompletedUI.ShowUI();
+            }
             System.Random random = new System.Random();
             spawnerOfEnemySpawners.amountOfSpawnersToSpawn += random.Next(0, spawnerOfEnemySpawners.amountOfSpawnersToSpawn + 2);
             spawnerKillCounter.counter = spawnerOfEnemySpawners.amountOfSpawnersToSpawn;
-            Map.transform.localScale = new Vector3(Map.transform.localScale.x + 30f, Map.transform.localScale.y + 30f, 0);
+            Map.transform.localScale += new Vector3(30f, 30f, 0);
             spawnerOfEnemySpawners.Awake();
         }
 
