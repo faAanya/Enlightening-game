@@ -20,8 +20,8 @@ public class SpawnerOfEnemySpawners : MonoBehaviour
         for (int i = 0; i < amountOfSpawnersToSpawn; i++)
         {
             Debug.Log("SpawnerSpawner");
-            int x = random.Next(-(int)Map.gameObject.transform.localScale.x + (int)(Map.gameObject.transform.localScale.x * 0.2f), (int)Map.gameObject.transform.localScale.x - (int)(Map.gameObject.transform.localScale.x * 0.2f));
-            int y = random.Next(-(int)Map.gameObject.transform.localScale.y + (int)(Map.gameObject.transform.localScale.x * 0.2f), (int)Map.gameObject.transform.localScale.y - (int)(Map.gameObject.transform.localScale.x * 0.2f));
+            int x = random.Next(-(int)Map.gameObject.transform.localScale.x + (int)(Map.gameObject.transform.localScale.x * 0.45f), (int)Map.gameObject.transform.localScale.x - (int)(Map.gameObject.transform.localScale.x * 0.45f));
+            int y = random.Next(-(int)Map.gameObject.transform.localScale.y + (int)(Map.gameObject.transform.localScale.x * 0.45f), (int)Map.gameObject.transform.localScale.y - (int)(Map.gameObject.transform.localScale.x * 0.45f));
 
             System.Random random1 = new System.Random();
             int randomIndex = random1.Next(0, typeOfSpawners.Count);

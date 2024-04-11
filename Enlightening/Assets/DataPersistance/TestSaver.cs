@@ -20,10 +20,12 @@ public class Saver : MonoBehaviour, IDataPersistence
 
     public void SaveData(ref GameData gameData)
     {
+        weaponClassToSave = new List<WeaponDataSO>();
         for (int i = 0; i < inventory.weapons.Count; i++)
         {
             weaponClassToSave.Add(inventory.weapons[i]);
         }
+
         gameData.playerWeaponInventory = weaponClassToSave;
 
     }

@@ -751,7 +751,7 @@ MonoBehaviour:
   - {fileID: 1122007576136796761, guid: f3b6e155bee94fe42a5e5953f4d98949, type: 3}
   - {fileID: 1122007576136796761, guid: ce669879b1cffc243b63fb59aa6b4aee, type: 3}
   - {fileID: 1122007576136796761, guid: 2b43be9abe3170643866fdb1cfc2b9d8, type: 3}
-  amountOfSpawnersToSpawn: 2
+  amountOfSpawnersToSpawn: 4
   Map: {fileID: 906459033}
 --- !u!4 &1004737623
 Transform:
