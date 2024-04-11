@@ -15,7 +15,6 @@ MonoBehaviour:
   staticInventorySize: 3
   weapons:
   - {fileID: 11400000, guid: ca9e825158e52af40b1d0c65525b50df, type: 2}
-  - {fileID: 11400000, guid: 1f1a814f8345aa140be27196776d5d95, type: 2}
   allWeapons:
   - {fileID: 11400000, guid: ca9e825158e52af40b1d0c65525b50df, type: 2}
   - {fileID: 11400000, guid: 588397b57fbd69c45ac319f3d100cf17, type: 2}

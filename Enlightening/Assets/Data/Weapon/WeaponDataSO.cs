@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
@@ -5,6 +6,8 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerDataSO", menuName = "Data/Player Data/WeaponSO's")]
 
+
+[System.Serializable]
 public class WeaponDataSO : ScriptableObject
 {
     public Sprite weaponImage;
@@ -13,5 +16,7 @@ public class WeaponDataSO : ScriptableObject
     public bool isEquiped;
 
     public GameObject weapon;
+
+    //public bool isOpened;
 
 }

@@ -3767,6 +3767,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1312447365}
   - component: {fileID: 1312447366}
+  - component: {fileID: 1312447367}
   m_Layer: 0
   m_Name: DataPersistenceManager
   m_TagString: Untagged
@@ -3802,6 +3803,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileName: data.json
+--- !u!114 &1312447367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312447364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728d94da06c726343b6e6cb719323a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: 71a4a6eea7ac101468aeadc905c05ef3, type: 2}
+  weaponClassToSave: []
 --- !u!1 &1334208667
 GameObject:
   m_ObjectHideFlags: 0
@@ -4869,8 +4884,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

@@ -31,19 +31,21 @@ public class LevelController : MonoBehaviour
 
     private void Update()
     {
-        if (spawnerKillCounter.counter == 0 && GameObject.FindGameObjectsWithTag("Enemy") == null)
-        {
-            if (//GameObject.FindGameObjectWithTag("SpawnerKillCounter").GetComponent<SpawnerKillCounter>().counter <= 0 && GameObject.FindGameObjectsWithTag("Enemy") == null && 
-            Map.transform.localScale.x == 170f)
+        if (spawnerKillCounter.counter == 0)
+            if (Map.transform.localScale.x == 200f && GameObject.FindGameObjectsWithTag("Enemy") == null)
+
             {
                 levelCompletedUI.ShowUI();
             }
-            System.Random random = new System.Random();
-            spawnerOfEnemySpawners.amountOfSpawnersToSpawn += random.Next(0, spawnerOfEnemySpawners.amountOfSpawnersToSpawn + 2);
-            spawnerKillCounter.counter = spawnerOfEnemySpawners.amountOfSpawnersToSpawn;
-            Map.transform.localScale += new Vector3(30f, 30f, 0);
-            spawnerOfEnemySpawners.Awake();
-        }
+            else
+            {
+                System.Random random = new System.Random();
+                spawnerOfEnemySpawners.amountOfSpawnersToSpawn += random.Next(0, spawnerOfEnemySpawners.amountOfSpawnersToSpawn + 2);
+                spawnerKillCounter.counter = spawnerOfEnemySpawners.amountOfSpawnersToSpawn;
+                Map.transform.localScale += new Vector3(30f, 30f, 0);
+                spawnerOfEnemySpawners.Awake();
+            }
 
     }
+
 }

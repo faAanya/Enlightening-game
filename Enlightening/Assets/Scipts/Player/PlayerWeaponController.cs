@@ -7,11 +7,10 @@ public class PlayerWeaponController : MonoBehaviour
 
     public UpgradesClass upgradesClass;
     public InventorySO inventory;
-    //public GameObject[] weaponsGameObjects;
+
     private void Awake()
     {
 
-        //weaponsGameObjects = new GameObject[inventory.weapons.Count];
         for (int j = 0; j < inventory.allWeapons.Count; j++)
         {
             Debug.Log(inventory.allWeapons.Count);
@@ -26,15 +25,7 @@ public class PlayerWeaponController : MonoBehaviour
             {
                 item.GetComponent<WeaponClass>().enabled = false;
             }
-            //            weaponsGameObjects[j] = gameObject.transform.GetChild(j).gameObject;
-
         }
-        // for (int i = 0; i < weaponsGameObjects.Length; i++)
-        // {
-        //     weaponsGameObjects[i].GetComponent<Transform>().transform.position = Vector3.zero;
-        //     ShowActiveWeapon();
-
-        // }
     }
     private void Update()
     {
@@ -63,17 +54,15 @@ public class PlayerWeaponController : MonoBehaviour
 
         // }
     }
+}
 
+[System.Serializable]
+public class WeaponClassToSave
+{
+    public Sprite weaponImage;
+    public string weaponName;
+    public string weaponDescription;
+    public bool isEquiped;
 
-    public void LoadData(GameData gameData)
-    {
-        inventory.weapons.AddRange(gameData.playerWeaponInventory);
-    }
-
-    public void SaveData(ref GameData gameData)
-    {
-
-        gameData.playerWeaponInventory = inventory.weapons;
-    }
-
+    public GameObject weapon;
 }

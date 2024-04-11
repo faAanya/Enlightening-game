@@ -8,12 +8,11 @@ public class GameData
 {
 
     public List<WeaponDataSO> playerWeaponInventory;
-    public bool[] completedLevels;
-
+    //public InventoryToSave inventoryToSave;
 
     public GameData()
     {
         playerWeaponInventory = new List<WeaponDataSO>();
-        completedLevels = new bool[3];
+        //inventoryToSave = new InventoryToSave();
     }
 }

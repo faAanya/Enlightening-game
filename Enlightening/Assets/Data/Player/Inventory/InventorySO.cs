@@ -10,6 +10,4 @@ public class InventorySO : ScriptableObject
     public List<WeaponDataSO> allWeapons;
 
 
-
-
 }
