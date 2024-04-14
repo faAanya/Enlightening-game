@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce7c6a8210af30043a878d4e5121a8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Tesla
+  weaponName: Tesla
   damage: 5
   duration: 2
   coolDown: 3

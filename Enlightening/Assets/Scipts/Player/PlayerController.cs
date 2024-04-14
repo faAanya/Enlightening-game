@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+
         StateMachine = new StateMachine(this);
         RB = GetComponent<Rigidbody2D>();
         StateMachine.Initialize(StateMachine.PlayerIdleState);

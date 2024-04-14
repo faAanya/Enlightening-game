@@ -22,7 +22,7 @@ public class CometeEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(canFly);
+
         transform.position = Vector3.MoveTowards(gameObject.transform.position, pos, .07f);
 
         if (enemy.health >= 0)

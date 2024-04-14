@@ -8,12 +8,12 @@ public class PlayerWeaponController : MonoBehaviour
     public UpgradesClass upgradesClass;
     public InventorySO inventory;
 
-    private void Awake()
+    private void Start()
     {
 
         for (int j = 0; j < inventory.allWeapons.Count; j++)
         {
-            Debug.Log(inventory.allWeapons.Count);
+
             GameObject item = Instantiate(inventory.allWeapons[j].weapon, gameObject.transform.position, Quaternion.identity);
             item.transform.SetParent(gameObject.transform);
             upgradesClass.weapons.Add(item.GetComponent<WeaponClass>());

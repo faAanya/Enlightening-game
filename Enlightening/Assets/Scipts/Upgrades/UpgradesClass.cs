@@ -136,18 +136,18 @@ public class UpgradesClass : MonoBehaviour
         switch (index)
         {
             case 0:
-                str = $" {weapon.Name} damage + {System.Math.Round(modifier, 2)}%";
+                str = $" {weapon.weaponName} damage + {System.Math.Round(modifier, 2)}%";
                 break;
             case 1:
 
-                str = $" {weapon.Name} duration + {System.Math.Round(modifier, 2)}%";
+                str = $" {weapon.weaponName} duration + {System.Math.Round(modifier, 2)}%";
                 break;
             case 2:
 
-                str = $" {weapon.Name} cooldown + {System.Math.Round(modifier, 2)}%";
+                str = $" {weapon.weaponName} cooldown + {System.Math.Round(modifier, 2)}%";
                 break;
             case 3:
-                str = $" {weapon.Name} number + 1";
+                str = $" {weapon.weaponName} number + 1";
                 break;
         }
         return str;
@@ -160,7 +160,7 @@ public class UpgradesClass : MonoBehaviour
 
     public string SetWeaponAvaliableText(WeaponClass weapon, int index, float modifier)
     {
-        return $"Avaliable {weapon.name}";
+        return $"Avaliable {weapon.weaponName}";
     }
 
 }

@@ -50,7 +50,7 @@ public class GenerateInventory : MonoBehaviour
         {
             if (inventorySO.weapons[i] == null)
             {
-                Debug.Log($"{i} Empty item");
+
                 continue;
             }
             if (inventorySO.weapons[i].isEquiped)

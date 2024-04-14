@@ -21,6 +21,7 @@ public class UpgraderUI : MonoBehaviour
     }
     public void GenerateUI()
     {
+
         for (int i = 0; i < upgradesText.Length; i++)
         {
 

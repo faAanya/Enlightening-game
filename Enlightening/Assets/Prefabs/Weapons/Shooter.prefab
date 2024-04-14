@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065b49bd968183349905f0d71e139e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Shooter
+  weaponName: Shooter
   damage: 10
   duration: 2
   coolDown: 5
