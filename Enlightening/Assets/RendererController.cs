@@ -7,7 +7,7 @@ public class RenderController : MonoBehaviour
 {
 
     SpriteRenderer[] renderers;
-    GameObject[] lights;
+    GameObject[] obj;
     private Camera cam;
     void Awake()
     {
@@ -16,50 +16,52 @@ public class RenderController : MonoBehaviour
     }
     void Update()
     {
+
         renderers = FindObjectsOfType<SpriteRenderer>();
+        obj = FindObjectsOfType<GameObject>();
 
-        lights = FindObjectsOfType<GameObject>();
-        foreach (SpriteRenderer element in renderers)
+        foreach (GameObject element in obj)
         {
-            if (element.gameObject.name != "Map")
+            if (element.gameObject.tag == "Map")
             {
-                Debug.Log(element.gameObject.name);
-                Vector3 viewPos = cam.WorldToViewportPoint(element.transform.position);
-
-                if (viewPos.x < 0 || viewPos.x > 1 || viewPos.y < 0 || viewPos.y > 1)
-                {
-                    element.enabled = false;
-                }
-                else
-                {
-                    element.enabled = true;
-                }
-
-
+                continue;
             }
-
-        }
-        foreach (GameObject e in lights)
-        {
-            if (e.gameObject.name != "Map")
+            else
             {
-                if (e.gameObject.GetComponent<Light2D>() != null)
+                if (element.gameObject.GetComponent<Light2D>() != null)
                 {
-                    Vector3 viewPos = cam.WorldToViewportPoint(e.transform.position);
+                    Vector3 viewPos = cam.WorldToViewportPoint(element.transform.position);
 
                     if (viewPos.x < 0 || viewPos.x > 1 || viewPos.y < 0 || viewPos.y > 1)
                     {
-                        e.gameObject.GetComponent<Light2D>().enabled = false;
+                        element.gameObject.GetComponent<Light2D>().enabled = false;
                     }
                     else
                     {
-                        e.gameObject.GetComponent<Light2D>().enabled = true;
+                        element.gameObject.GetComponent<Light2D>().enabled = true;
                     }
                 }
+                else if (element.gameObject.GetComponent<Renderer>() != null)
+                {
+                    Vector3 viewPos = cam.WorldToViewportPoint(element.transform.position);
 
+                    if (viewPos.x < 0 || viewPos.x > 1 || viewPos.y < 0 || viewPos.y > 1)
+                    {
+                        element.gameObject.GetComponent<Renderer>().enabled = false;
+                    }
+                    else
+                    {
+                        element.gameObject.GetComponent<Renderer>().enabled = true;
+                    }
+                }
             }
+
+
         }
 
     }
 
+
 }
+
+

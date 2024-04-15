@@ -12,6 +12,8 @@ TagManager:
   - SpawnerSpawner
   - Spawner
   - SpawnerKillCounter
+  - Map
+  - MinimapCamera
   layers:
   - Default
   - TransparentFX

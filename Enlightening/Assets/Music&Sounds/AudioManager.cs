@@ -4,7 +4,8 @@ using FMOD.Studio;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 
-public class AudioManager : MonoBehaviour
+[System.Serializable]
+public class AudioManager : MonoBehaviour, IDataPersistence
 {
     [Header("Volume")]
     [Range(0, 1)]
@@ -122,5 +123,18 @@ public class AudioManager : MonoBehaviour
     private void OnDestroy()
     {
         Cleanup();
+    }
+
+    public void LoadData(GameData gameData)
+    {
+        masterVolume = gameData.musicSettings[0];
+        musicVolume = gameData.musicSettings[1];
+        sfxVolume = gameData.musicSettings[2];
+
+    }
+
+    public void SaveData(ref GameData gameData)
+    {
+        gameData.musicSettings = new List<float> { masterVolume, musicVolume, sfxVolume };
     }
 }

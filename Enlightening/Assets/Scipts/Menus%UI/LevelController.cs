@@ -43,6 +43,7 @@ public class LevelController : MonoBehaviour
                 spawnerOfEnemySpawners.amountOfSpawnersToSpawn += random.Next(0, spawnerOfEnemySpawners.amountOfSpawnersToSpawn + 2);
                 spawnerKillCounter.counter = spawnerOfEnemySpawners.amountOfSpawnersToSpawn;
                 Map.transform.localScale += new Vector3(30f, 30f, 0);
+                GameObject.FindGameObjectWithTag("MinimapCamera").GetComponent<Camera>().orthographicSize += 15f;
                 spawnerOfEnemySpawners.Awake();
             }
 

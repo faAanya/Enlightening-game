@@ -89,6 +89,10 @@ public class UpgradesClass : MonoBehaviour
                 player.health = player.health + player.health * modifier;
                 break;
             case 1:
+                if (player.movementSpeed >= 20)
+                {
+                    ChangePlayerCharacteristics(player, 0, .2f);
+                }
                 player.movementSpeed = player.movementSpeed + player.movementSpeed * modifier;
                 break;
         }

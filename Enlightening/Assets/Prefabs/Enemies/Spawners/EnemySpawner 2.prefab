@@ -49,13 +49,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb6c8c860a81e6d43a1f6b96500a73be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1668667541020017793, guid: 1f4569978610ce54d97b22288031784c, type: 3}
-  cam: {fileID: 0}
+  enemy: {fileID: 3545627447831462228, guid: a6494cfb2b45c244b93e0e3bafa94783, type: 3}
   interval: 10
   testPos: {x: 0, y: 0, z: 0}
   health: 30
   amount: 1
-  spawnerKillCounter: {fileID: 0}
 --- !u!212 &219274275362199365
 SpriteRenderer:
   m_ObjectHideFlags: 0

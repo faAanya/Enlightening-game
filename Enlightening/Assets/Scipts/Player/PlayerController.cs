@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
     public Rigidbody2D RB;
     public PlayerInputHandler InputHandler { get; private set; }
 
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float health;
     public float movementSpeed;
     public int score;
+
     #endregion
     private void Awake()
     {
