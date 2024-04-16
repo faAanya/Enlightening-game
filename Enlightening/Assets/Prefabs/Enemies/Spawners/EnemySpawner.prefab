@@ -50,12 +50,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2542942683013008901, guid: 94880e8305344a14a802eaa01b136fa8, type: 3}
-  cam: {fileID: 0}
-  interval: 10
+  interval: 3
   testPos: {x: 0, y: 0, z: 0}
   health: 30
   amount: 1
-  spawnerKillCounter: {fileID: 0}
 --- !u!212 &219274275362199365
 SpriteRenderer:
   m_ObjectHideFlags: 0

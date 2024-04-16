@@ -16,6 +16,10 @@ public class EnemyFollowerLogic : MonoBehaviour
 
     void Update()
     {
-        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, playerController.transform.position, 0.01f);
+        if (Time.timeScale != 0)
+        {
+            gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, playerController.transform.position, 0.01f);
+        }
+
     }
 }

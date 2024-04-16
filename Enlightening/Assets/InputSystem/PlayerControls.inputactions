@@ -175,6 +175,17 @@
                 },
                 {
                     "name": "",
+                    "id": "b6269bc7-d91d-4867-864f-d884ec2ff1ee",
+                    "path": "<Touchscreen>/position",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "TouchScreen",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "18becb81-4a8a-4e4f-b4fc-3c8eba0eae6f",
                     "path": "<Keyboard>/space",
                     "interactions": "",

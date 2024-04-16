@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f4ffa006d9f9ae4e974bd15b2b11e20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 40
   damage: 2
   coolDown: 10
   orb: {fileID: 3813207797459306195, guid: 1b0ff23a20a78c747a7fe52aaeaa69fc, type: 3}

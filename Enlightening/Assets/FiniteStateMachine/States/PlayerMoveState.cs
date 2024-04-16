@@ -16,7 +16,7 @@ public class PlayerMoveState : IState
     }
     public void Update()
     {
-
+        //player.transform.position = player.InputHandler.RawMovementInput;
         player.RB.velocity = player.InputHandler.InputVector * player.movementSpeed;
 
         if (player.InputHandler.InputVector == Vector2.zero)

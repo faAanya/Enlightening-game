@@ -32,7 +32,7 @@ public class LevelController : MonoBehaviour
     private void Update()
     {
         if (spawnerKillCounter.counter == 0)
-            if (Map.transform.localScale.x == 200f && GameObject.FindGameObjectsWithTag("Enemy") == null)
+            if (Map.transform.localScale.x == 50f && GameObject.FindGameObjectsWithTag("Enemy") == null)
 
             {
                 levelCompletedUI.ShowUI();
