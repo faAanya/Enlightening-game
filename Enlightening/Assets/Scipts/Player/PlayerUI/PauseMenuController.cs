@@ -18,11 +18,11 @@ public class PauseMenuController : MonoBehaviour
         settingsOpened = false;
         Settings.SetActive(settingsOpened);
         resumeButton.onClick.AddListener(() => { PauseMenuUI.OnPauseDisable.Invoke(); });
-        quitButton.onClick.AddListener(() => { Time.timeScale = 1; SceneManager.LoadScene("Main Menu"); AudioManager.Instance.SetMusicScene(0); });
+        quitButton.onClick.AddListener(() => { Time.timeScale = 1; AudioManager.Instance.SetMusicScene(0); SceneManager.LoadScene("Main Menu"); });
         settingsButton.onClick.AddListener(() =>
         {
             settingsOpened = !settingsOpened;
             Settings.SetActive(settingsOpened);
-    });
+        });
     }
 }

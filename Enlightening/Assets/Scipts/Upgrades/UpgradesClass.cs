@@ -87,6 +87,7 @@ public class UpgradesClass : MonoBehaviour
         {
             case 0:
                 player.health = player.health + player.health * modifier;
+                SliderController.slider.maxValue = player.health;
                 break;
             case 1:
                 if (player.movementSpeed >= 20)
@@ -105,10 +106,10 @@ public class UpgradesClass : MonoBehaviour
         switch (index)
         {
             case 0:
-                str = $" Player health + {System.Math.Round(modifier, 2)}%";
+                str = $" Player health + {System.Math.Round(modifier, 2) * 100}%";
                 break;
             case 1:
-                str = $" Player speed + {System.Math.Round(modifier, 2)}%";
+                str = $" Player speed + {System.Math.Round(modifier, 2) * 100}%";
                 break;
         }
         return str;
@@ -140,15 +141,15 @@ public class UpgradesClass : MonoBehaviour
         switch (index)
         {
             case 0:
-                str = $" {weapon.weaponName} damage + {System.Math.Round(modifier, 2)}%";
+                str = $" {weapon.weaponName} damage + {System.Math.Round(modifier, 2) * 100}%";
                 break;
             case 1:
 
-                str = $" {weapon.weaponName} duration + {System.Math.Round(modifier, 2)}%";
+                str = $" {weapon.weaponName} duration + {System.Math.Round(modifier, 2) * 100}%";
                 break;
             case 2:
 
-                str = $" {weapon.weaponName} cooldown + {System.Math.Round(modifier, 2)}%";
+                str = $" {weapon.weaponName} cooldown + {System.Math.Round(modifier, 2) * 100}%";
                 break;
             case 3:
                 str = $" {weapon.weaponName} number + 1";

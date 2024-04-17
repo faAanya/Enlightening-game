@@ -19,20 +19,20 @@ public class LookAroundCameraController : MonoBehaviour
     void Start()
     {
 
-        var height = cam.orthographicSize;
-        var width = height * cam.aspect;
+        // var height = cam.orthographicSize;
+        // var width = height * cam.aspect;
 
 
 
-        var minX = SetWorldBounds.worldBounds.min.x + width;
-        var maxX = SetWorldBounds.worldBounds.extents.x - width;
+        // var minX = SetWorldBounds.worldBounds.min.x + width;
+        // var maxX = SetWorldBounds.worldBounds.extents.x - width;
 
 
-        var minY = SetWorldBounds.worldBounds.min.y + height;
-        var maxY = SetWorldBounds.worldBounds.extents.y - height;
+        // var minY = SetWorldBounds.worldBounds.min.y + height;
+        // var maxY = SetWorldBounds.worldBounds.extents.y - height;
 
-        cameraBounds = new Bounds();
-        cameraBounds.SetMinMax(new Vector3(minX, maxX, 0), new Vector3(minY, maxY, 0));
+        // cameraBounds = new Bounds();
+        // cameraBounds.SetMinMax(new Vector3(minX, maxX, 0), new Vector3(minY, maxY, 0));
 
 
 
@@ -53,20 +53,20 @@ public class LookAroundCameraController : MonoBehaviour
         this.transform.position = targetPos;
     }
 
-    void LateUpdate()
-    {
-        targetPos = GetCameraBounds();
-        transform.position = targetPos;
-    }
+    // void LateUpdate()
+    // {
+    //     targetPos = GetCameraBounds();
+    //     transform.position = targetPos;
+    // }
 
-    private Vector3 GetCameraBounds()
-    {
-        return new Vector3(
-            Math.Clamp(targetPos.x, cameraBounds.min.x, cameraBounds.max.x),
-            Math.Clamp(targetPos.y, cameraBounds.min.y, cameraBounds.max.y),
-            transform.position.z
-        );
+    // private Vector3 GetCameraBounds()
+    // {
+    //     return new Vector3(
+    //         Math.Clamp(targetPos.x, cameraBounds.min.x, cameraBounds.max.x),
+    //         Math.Clamp(targetPos.y, cameraBounds.min.y, cameraBounds.max.y),
+    //         transform.position.z
+    //     );
 
 
-    }
+    // }
 }

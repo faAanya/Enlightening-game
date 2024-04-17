@@ -8,6 +8,7 @@ public class MiniMapUI : MonoBehaviour
     public static Action OnMinimapEnable;
     public static Action OnMinimapDisable;
     public GameObject miniMap;
+    public static bool isOpened = false;
 
     void OnEnable()
     {

@@ -16,7 +16,7 @@ public class DeathController : MonoBehaviour
     void Start()
     {
         restartButton.onClick.AddListener(() => { Time.timeScale = 1; SceneManager.LoadScene("SampleScene 1"); });
-        quitButton.onClick.AddListener(() => { Time.timeScale = 1; SceneManager.LoadScene("Main Menu"); });
+        quitButton.onClick.AddListener(() => { Time.timeScale = 1; AudioManager.Instance.SetMusicScene(0); SceneManager.LoadScene("Main Menu"); });
     }
 
 }

@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -27,6 +29,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Start()
     {
+
         playerInput = GetComponent<PlayerInput>();
         player = GetComponent<PlayerController>();
     }
@@ -90,13 +93,16 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnMiniMapInput(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.started)
         {
-            MiniMapUI.OnMinimapEnable.Invoke();
-        }
-        if (context.canceled)
-        {
-            MiniMapUI.OnMinimapDisable.Invoke();
+            if (MiniMapUI.isOpened)
+            {
+                MiniMapUI.OnMinimapEnable.Invoke();
+            }
+            else
+            {
+                MiniMapUI.OnMinimapDisable.Invoke();
+            }
         }
     }
 

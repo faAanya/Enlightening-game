@@ -175,11 +175,11 @@
                 },
                 {
                     "name": "",
-                    "id": "b6269bc7-d91d-4867-864f-d884ec2ff1ee",
-                    "path": "<Touchscreen>/position",
-                    "interactions": "Press",
+                    "id": "485ae933-f4ff-4c94-a1d7-9b1fd1a08795",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
                     "processors": "",
-                    "groups": "TouchScreen",
+                    "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false

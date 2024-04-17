@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class SliderController : MonoBehaviour
 {
-    public Slider slider;
+    public static Slider slider;
 
     void Start()
     {

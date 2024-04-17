@@ -923,7 +923,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1222976682}
   - component: {fileID: 1222976681}
-  - component: {fileID: 1222976683}
   m_Layer: 0
   m_Name: CameraPro
   m_TagString: Untagged
@@ -960,19 +959,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 527609721}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1222976683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1222976680}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81e319b07a1d5ae48842d4fd133bde52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Map: {fileID: 906459033}
 --- !u!1 &1343606254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1863,6 +1849,10 @@ PrefabInstance:
       value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 697637687217032196, guid: 85d6b643d8da8f6479718236a5f2a430, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2263298
+      objectReference: {fileID: 0}
+    - target: {fileID: 697637687217032196, guid: 85d6b643d8da8f6479718236a5f2a430, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -1946,6 +1936,18 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 4405292504626405426, guid: 85d6b643d8da8f6479718236a5f2a430, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2263298
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405292504626405426, guid: 85d6b643d8da8f6479718236a5f2a430, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.00206
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011100526749134958, guid: 85d6b643d8da8f6479718236a5f2a430, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2263298
+      objectReference: {fileID: 0}
     - target: {fileID: 5011100526749134958, guid: 85d6b643d8da8f6479718236a5f2a430, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.00055
@@ -1965,6 +1967,10 @@ PrefabInstance:
     - target: {fileID: 6399465353806916333, guid: 85d6b643d8da8f6479718236a5f2a430, type: 3}
       propertyPath: m_TagString
       value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6976525050117822241, guid: 85d6b643d8da8f6479718236a5f2a430, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2263298
       objectReference: {fileID: 0}
     - target: {fileID: 7026151619440000856, guid: 85d6b643d8da8f6479718236a5f2a430, type: 3}
       propertyPath: m_TagString
