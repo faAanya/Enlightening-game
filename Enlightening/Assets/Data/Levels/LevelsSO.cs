@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerDataSO", menuName = "Data/Player Data/Levels's")]
+
+[System.Serializable]
 public class LevelsSO : ScriptableObject
 {
     public int levelAmout = 5;

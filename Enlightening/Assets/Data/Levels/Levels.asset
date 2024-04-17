@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Levels
   m_EditorClassIdentifier: 
   levelAmout: 5
-  openedLevels: 010001
+  openedLevels: 0100

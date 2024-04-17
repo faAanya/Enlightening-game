@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -95,7 +92,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.started)
         {
-            if (MiniMapUI.isOpened)
+            if (!MiniMapUI.isOpened)
             {
                 MiniMapUI.OnMinimapEnable.Invoke();
             }

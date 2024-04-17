@@ -7,6 +7,8 @@ public class MapImageController : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     PlayerController playerController;
+
+    public int maxSize;
     void Start()
     {
 

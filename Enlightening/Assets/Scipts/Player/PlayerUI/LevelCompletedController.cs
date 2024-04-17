@@ -22,16 +22,16 @@ public class LevelCompletedController : MonoBehaviour
     public void OpenNextLevel()
     {
         Debug.Log("Level opened");
-        // for (int i = 0; i < levelsSO.openedLevels.Length; i++)
-        // {
+        for (int i = 0; i < levelsSO.openedLevels.Length; i++)
+        {
 
-        //     if (!levelsSO.openedLevels[i])
-        //     {
-        //         levelsSO.openedLevels[i] = !levelsSO.openedLevels[i];
-        //         break;
-        //     }
+            if (!levelsSO.openedLevels[i])
+            {
+                levelsSO.openedLevels[i] = !levelsSO.openedLevels[i];
+                break;
+            }
 
-        // }
+        }
 
     }
 

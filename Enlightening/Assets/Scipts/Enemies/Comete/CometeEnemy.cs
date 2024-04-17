@@ -5,7 +5,7 @@ using UnityEngine;
 public class CometeEnemy : MonoBehaviour
 {
 
-    private Enemy enemy;
+    public Enemy enemy;
     public GameObject comete;
     private bool canFly = true;
     private PlayerController playerController;

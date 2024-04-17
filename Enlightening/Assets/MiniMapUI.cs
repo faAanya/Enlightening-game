@@ -19,11 +19,13 @@ public class MiniMapUI : MonoBehaviour
     private void HideUI()
     {
         miniMap.SetActive(false);
+        isOpened = false;
     }
 
     private void ShowUI()
     {
         miniMap.SetActive(true);
+        isOpened = true;
     }
 
     void OnDisable()

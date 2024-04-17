@@ -12,6 +12,10 @@ public class Weapon : MonoBehaviour
         {
             collider.gameObject.GetComponent<Enemy>().health -= damage;
         }
+        if (collider.gameObject.tag == "Comete")
+        {
+            collider.gameObject.GetComponent<CometeEnemy>().enemy.health -= damage;
+        }
         if (collider.gameObject.tag == "Spawner")
         {
             collider.gameObject.GetComponent<Spawner>().health -= damage;

@@ -175,17 +175,6 @@
                 },
                 {
                     "name": "",
-                    "id": "485ae933-f4ff-4c94-a1d7-9b1fd1a08795",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "18becb81-4a8a-4e4f-b4fc-3c8eba0eae6f",
                     "path": "<Keyboard>/space",
                     "interactions": "",

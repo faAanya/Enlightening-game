@@ -750,7 +750,6 @@ MonoBehaviour:
   typeOfSpawners:
   - {fileID: 1122007576136796761, guid: f3b6e155bee94fe42a5e5953f4d98949, type: 3}
   - {fileID: 1122007576136796761, guid: ce669879b1cffc243b63fb59aa6b4aee, type: 3}
-  - {fileID: 1122007576136796761, guid: 2b43be9abe3170643866fdb1cfc2b9d8, type: 3}
   amountOfSpawnersToSpawn: 4
   Map: {fileID: 906459033}
 --- !u!4 &1004737623
@@ -1881,14 +1880,6 @@ PrefabInstance:
       value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 2571394859713617701, guid: 85d6b643d8da8f6479718236a5f2a430, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 2571394859713617701, guid: 85d6b643d8da8f6479718236a5f2a430, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 2571394859713617701, guid: 85d6b643d8da8f6479718236a5f2a430, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -1967,6 +1958,10 @@ PrefabInstance:
     - target: {fileID: 6399465353806916333, guid: 85d6b643d8da8f6479718236a5f2a430, type: 3}
       propertyPath: m_TagString
       value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6631526626787102982, guid: 85d6b643d8da8f6479718236a5f2a430, type: 3}
+      propertyPath: maxSize
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6976525050117822241, guid: 85d6b643d8da8f6479718236a5f2a430, type: 3}
       propertyPath: m_LocalScale.x

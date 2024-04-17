@@ -31,13 +31,17 @@ public class LevelController : MonoBehaviour
 
     private void Update()
     {
-        if (spawnerKillCounter.counter == 0)
-            if (Map.transform.localScale.x == 50f && GameObject.FindGameObjectsWithTag("Enemy") == null)
 
+        if (spawnerKillCounter.counter == 0)
+        {
+            if (Map.transform.localScale.x == Map.GetComponent<MapImageController>().maxSize)
             {
-                levelCompletedUI.ShowUI();
+                if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+                {
+                    levelCompletedUI.ShowUI();
+                }
             }
-            else
+            else if (Map.transform.localScale.x != Map.GetComponent<MapImageController>().maxSize)
             {
                 System.Random random = new System.Random();
                 spawnerOfEnemySpawners.amountOfSpawnersToSpawn += random.Next(0, spawnerOfEnemySpawners.amountOfSpawnersToSpawn + 2);
@@ -46,7 +50,9 @@ public class LevelController : MonoBehaviour
                 GameObject.FindGameObjectWithTag("MinimapCamera").GetComponent<Camera>().orthographicSize += 15f;
                 spawnerOfEnemySpawners.Awake();
             }
+            else { }
 
+        }
     }
 
 }
