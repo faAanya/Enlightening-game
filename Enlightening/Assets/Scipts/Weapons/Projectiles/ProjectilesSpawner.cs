@@ -8,11 +8,14 @@ public class NearProjectilesSpawner : WeaponClass
 {
     private GameObject[] projectiles;
     public AnimationCurve curve;
+
+    public int startNumber;
+
     public override void Start()
     {
 
         base.Start();
-
+        startNumber = number;
 
         projectiles = new GameObject[number];
         for (int i = 0; i < projectiles.Length; i++)
@@ -22,7 +25,6 @@ public class NearProjectilesSpawner : WeaponClass
 
         for (int i = 0, j = 0; i < projectiles.Length && j < 360; i++, j += 360 / projectiles.Length)
         {
-
             Vector3 pos = new Vector3(size * Mathf.Cos(j * Mathf.PI / 180) + transform.position.x, size * Mathf.Sin(j * Mathf.PI / 180) + transform.position.y, 0);
             GameObject prj = Instantiate(projectiles[i], pos, Quaternion.identity);
             prj.transform.parent = gameObject.transform;
@@ -33,7 +35,24 @@ public class NearProjectilesSpawner : WeaponClass
     public override void Update()
     {
         base.Update();
+        if (number != startNumber)
+        {
 
+            projectiles = new GameObject[number];
+
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                Destroy(gameObject.transform.GetChild(i).gameObject);
+            }
+
+            for (int i = 0, j = 0; i < number && j < 360; i++, j += 360 / projectiles.Length)
+            {
+                Vector3 pos = new Vector3(size * Mathf.Cos(j * Mathf.PI / 180) + transform.position.x, size * Mathf.Sin(j * Mathf.PI / 180) + transform.position.y, 0);
+                GameObject prj = Instantiate(projectile, pos, Quaternion.identity);
+                prj.transform.parent = gameObject.transform;
+            }
+            startNumber = number;
+        }
         if (canAttack)
         {
             StartCoroutine(Rotate());

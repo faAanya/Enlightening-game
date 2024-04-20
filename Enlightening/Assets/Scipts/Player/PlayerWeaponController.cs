@@ -13,8 +13,7 @@ public class PlayerWeaponController : MonoBehaviour
 
         for (int j = 0; j < inventory.allWeapons.Count; j++)
         {
-
-            GameObject item = Instantiate(inventory.allWeapons[j].weapon, gameObject.transform.position, Quaternion.identity);
+            GameObject item = Instantiate(inventory.allWeapons[j].weapon, gameObject.transform.position, Quaternion.Euler(0, 0, 0));
             item.transform.SetParent(gameObject.transform);
             upgradesClass.weapons.Add(item.GetComponent<WeaponClass>());
             if (inventory.allWeapons[j].isEquiped)

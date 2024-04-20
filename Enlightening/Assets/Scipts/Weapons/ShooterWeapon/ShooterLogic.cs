@@ -11,9 +11,11 @@ public class ShooterLogic : WeaponClass
     public override void Update()
     {
         Rotate(gameObject, mousePosition);
-         if (canAttack)
+        if (canAttack)
         {
+
             StartCoroutine(Shoot(coolDown, projectile));
+
         }
     }
 
@@ -23,8 +25,11 @@ public class ShooterLogic : WeaponClass
         yield return new WaitForSeconds(interval);
         canAttack = true;
 
-        GameObject newprojectile = Instantiate(projectile, playerController.transform.position, Quaternion.identity);
-      
+        for (int i = 0; i < number; i++)
+        {
+            GameObject newprojectile = Instantiate(projectile, playerController.transform.position, Quaternion.identity);
+
+        }
         StartCoroutine(Shoot(interval, projectile));
     }
 }

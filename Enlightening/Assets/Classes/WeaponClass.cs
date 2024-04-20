@@ -27,6 +27,7 @@ public class WeaponClass : MonoBehaviour
 
     public virtual void Start()
     {
+
         this.playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         this.mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         projectile.GetComponent<Weapon>().damage = this.damage;
@@ -36,6 +37,7 @@ public class WeaponClass : MonoBehaviour
     public virtual void Update()
     {
         this.mousePosition = mainCamera.ScreenToWorldPoint(playerController.InputHandler.inputPosition);
+
     }
 
 

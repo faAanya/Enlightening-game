@@ -4,6 +4,7 @@ using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
 
 public class UpgraderUI : MonoBehaviour
@@ -28,6 +29,8 @@ public class UpgraderUI : MonoBehaviour
 
             System.Random random = new System.Random();
             int t = random.Next(0, upgradesClass.upgrades.Length + 1); //generate random upgrade
+            int randomWeaponUpgrade = random.Next(0, 4);
+
 
             int playerIndexUpgrade = random.Next(0, 2), upgradeToOpen = random.Next(0, upgradesClass.upgrades.Length), randomWeaponToUpgrade = random.Next(0, upgradesClass.weapons.Count);
             float playerModifierUpgrade = (float)random.NextDouble(), weaponModifierUpgrade = (float)random.NextDouble();
@@ -47,10 +50,12 @@ public class UpgraderUI : MonoBehaviour
             }
             else
             {
+
                 upgradesText[i].text = upgradesClass.upgradesTexts[upgradeToOpen]
-                    (upgradesClass.weapons[randomWeaponToUpgrade], upgradeToOpen, weaponModifierUpgrade);
+                    (upgradesClass.weapons[randomWeaponToUpgrade], randomWeaponUpgrade, weaponModifierUpgrade);
             }
-            buttons[i].onClick.AddListener(() => { upgradesClass.GenerateUpdate(t, playerIndexUpgrade, playerModifierUpgrade, weaponModifierUpgrade, upgradeToOpen, randomWeaponToUpgrade); Time.timeScale = 1; });
+            buttons[i].onClick.RemoveAllListeners();
+            buttons[i].onClick.AddListener(() => { upgradesClass.GenerateUpdate(t, playerIndexUpgrade, playerModifierUpgrade, weaponModifierUpgrade, upgradeToOpen, randomWeaponUpgrade, randomWeaponToUpgrade); Time.timeScale = 1; });
             buttons[i].onClick.AddListener(() => canvas.SetActive(false));
         }
 

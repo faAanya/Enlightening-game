@@ -15,7 +15,7 @@ public class DeathController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        restartButton.onClick.AddListener(() => { Time.timeScale = 1; SceneManager.LoadScene("SampleScene 1"); });
+        restartButton.onClick.AddListener(() => { Time.timeScale = 1; SceneManager.LoadScene(SceneManager.GetActiveScene().name); });
         quitButton.onClick.AddListener(() => { Time.timeScale = 1; AudioManager.Instance.SetMusicScene(0); SceneManager.LoadScene("Main Menu"); });
     }
 

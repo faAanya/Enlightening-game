@@ -67,7 +67,7 @@ public class UpgradesClass : MonoBehaviour
     }
 
 
-    public void GenerateUpdate(int t, int playerIndexUpgrade, float playerModifierUpgrade, float weaponModifierUpgrade, int upgradeToOpen, int randomWeaponToUpgrade)
+    public void GenerateUpdate(int t, int playerIndexUpgrade, float playerModifierUpgrade, float weaponModifierUpgrade, int upgradeToOpen, int randomWeaponUpgrade, int randomWeaponToUpgrade)
     {
         Debug.Log($"Entered button {t} {upgradeToOpen} {weaponModifierUpgrade} {upgradeToOpen} {randomWeaponToUpgrade} {weapons[randomWeaponToUpgrade].name}");
         if (t == upgrades.Length)
@@ -77,7 +77,7 @@ public class UpgradesClass : MonoBehaviour
         else
         {
 
-            upgrades[upgradeToOpen](weapons[randomWeaponToUpgrade], upgradeToOpen, weaponModifierUpgrade);
+            upgrades[upgradeToOpen](weapons[randomWeaponToUpgrade], randomWeaponUpgrade, weaponModifierUpgrade);
 
         }
     }
@@ -146,11 +146,11 @@ public class UpgradesClass : MonoBehaviour
                 break;
             case 1:
 
-                str = $" {weapon.weaponName} duration + {System.Math.Round(modifier, 2) * 100}%";
+                str = $" {weapon.weaponName} duration - {System.Math.Round(modifier, 2) * 100}%";
                 break;
             case 2:
 
-                str = $" {weapon.weaponName} cooldown + {System.Math.Round(modifier, 2) * 100}%";
+                str = $" {weapon.weaponName} cooldown - {System.Math.Round(modifier, 2) * 100}%";
                 break;
             case 3:
                 str = $" {weapon.weaponName} number + 1";

@@ -54,3 +54,4 @@ MonoBehaviour:
   projectile: {fileID: 5485123076833616316, guid: ed7546d72ca4ec045985d18e2c20014b, type: 3}
   isAvaliable: 1
   projectiles: []
+  startNumber: 0
