@@ -63,6 +63,7 @@ public class UpgradesClass : MonoBehaviour
     {
         canvas.gameObject.SetActive(true);
         upgraderUI.GenerateUI();
+        Time.timeScale = 0;
     }
 
 

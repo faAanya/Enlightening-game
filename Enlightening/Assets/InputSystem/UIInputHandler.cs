@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,16 +10,32 @@ public class UIInputHandler : MonoBehaviour
     private static UIInputHandler Instance;
 
     public MainMenuController mainMenuController;
+
+    private int pressCounter = 0;
     public void OnMenuMove(InputAction.CallbackContext context)
     {
-
         Debug.Log("Pressed");
-        mainMenuController.Invoke("MoveMainButtons", 0.0001f);
-        mainMenuController.Invoke("MoveLevelChooser", 0.0001f);
-        mainMenuController.StartCoroutine(mainMenuController.MoveMainButtons(0, -2.35f));
-        mainMenuController.StartCoroutine(mainMenuController.MoveLevelChooser(3.5f, 0f)); ;
-        //mainMenuController.StartCoroutine(mainMenuController.MoveLevelChooser(+7f, 0f));
-        //        mainMenuController.StartCoroutine(mainMenuController.MoveMainButtons(0, -7f));
-
+        if (context.started)
+        {
+            pressCounter++;
+            if (pressCounter == 1 && mainMenuController.isLevelChooser)
+            {
+                mainMenuController.MoveLevelChooser(0, 0, 800, 0);
+                mainMenuController.isCollection = true;
+                mainMenuController.isLevelChooser = false;
+            }
+            else if (pressCounter == 2 && mainMenuController.isCollection)
+            {
+                mainMenuController.MoveMainButtons(0, 0, 0, -450);
+                mainMenuController.isTitle = true;
+                mainMenuController.isCollection = false;
+                pressCounter = 0;
+            }
+            else
+            {
+                pressCounter = 0;
+            }
+        }
     }
+
 }

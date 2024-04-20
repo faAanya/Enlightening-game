@@ -50,7 +50,7 @@ public class UpgraderUI : MonoBehaviour
                 upgradesText[i].text = upgradesClass.upgradesTexts[upgradeToOpen]
                     (upgradesClass.weapons[randomWeaponToUpgrade], upgradeToOpen, weaponModifierUpgrade);
             }
-            buttons[i].onClick.AddListener(() => upgradesClass.GenerateUpdate(t, playerIndexUpgrade, playerModifierUpgrade, weaponModifierUpgrade, upgradeToOpen, randomWeaponToUpgrade));
+            buttons[i].onClick.AddListener(() => { upgradesClass.GenerateUpdate(t, playerIndexUpgrade, playerModifierUpgrade, weaponModifierUpgrade, upgradeToOpen, randomWeaponToUpgrade); Time.timeScale = 1; });
             buttons[i].onClick.AddListener(() => canvas.SetActive(false));
         }
 

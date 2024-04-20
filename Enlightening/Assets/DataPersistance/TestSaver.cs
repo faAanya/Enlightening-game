@@ -5,6 +5,8 @@ using UnityEngine;
 public class Saver : MonoBehaviour, IDataPersistence
 {
     public InventorySO inventory;
+
+    public LevelsSO levelsSO;
     public List<WeaponDataSO> weaponClassToSave;
     void Awake()
     {
@@ -15,11 +17,15 @@ public class Saver : MonoBehaviour, IDataPersistence
     }
     public void LoadData(GameData gameData)
     {
+        levelsSO.openedLevels = gameData.levels;
         inventory.weapons = gameData.playerWeaponInventory;
     }
 
+
+
     public void SaveData(ref GameData gameData)
     {
+        gameData.levels = levelsSO.openedLevels;
         weaponClassToSave = new List<WeaponDataSO>();
         for (int i = 0; i < inventory.weapons.Count; i++)
         {

@@ -15,6 +15,7 @@ public class GameData
     public GameData()
     {
         levels = new bool[2];
+        levels[0] = true;
         musicSettings = new List<float>(3);
         playerWeaponInventory = new List<WeaponDataSO>();
         //inventoryToSave = new InventoryToSave();

@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -33,6 +34,8 @@ public class MainMenuController : MonoBehaviour
     [Header("Bools")]
 
     public bool settingsOpened;
+
+
     public bool isTitle;
     public bool isCollection;
 
@@ -41,11 +44,17 @@ public class MainMenuController : MonoBehaviour
 
     void Start()
     {
+
+        isTitle = true;
+        isCollection = false;
+        isLevelChooser = false;
+
+
         settingsOpened = false;
         Settings.SetActive(settingsOpened);
 
 
-        startButton.onClick.AddListener(() => { StartCoroutine(MoveMainButtons(0f, 7f)); });
+        startButton.onClick.AddListener(() => { MoveMainButtons(0, 450, 0, 0); });
         settingsButton.onClick.AddListener(() =>
         {
             settingsOpened = !settingsOpened;
@@ -67,36 +76,29 @@ public class MainMenuController : MonoBehaviour
         });
         Accept.onClick.AddListener(() =>
         {
-            StartCoroutine(MoveLevelChooser(-7f, 0f));
-            StartCoroutine(MoveMainButtons(0f, 7f));
+            MoveLevelChooser(-800, 0, 0, 0);
         });
 
 
     }
 
-    public IEnumerator MoveMainButtons(float dirX, float dirY)
+    public void MoveMainButtons(int dirX1, int dirY1, int dirX2, int dirY2)
     {
-        for (int i = 0; i <= 160; i++)
-        {
-            for (int j = 0; j < UIs.Length; j++)
-            {
-                UIs[j].transform.position = new Vector3(UIs[j].transform.position.x + dirX, UIs[j].transform.position.y + dirY);
-            }
+        isTitle = false;
+        isCollection = true;
+        UIs[0].GetComponent<RectTransform>().anchoredPosition = new Vector3(dirX1, dirY1);
+        UIs[1].GetComponent<RectTransform>().anchoredPosition = new Vector3(dirX2, dirY2);
 
-            yield return null;
-        }
     }
-    public IEnumerator MoveLevelChooser(float dirX, float dirY)
+    public void MoveLevelChooser(int dirX1, int dirY1, int dirX2, int dirY2)
     {
+        isCollection = false;
+        isLevelChooser = true;
 
-        for (int i = 0; i <= 280; i++)
-        {
-
-            LevelChooser.transform.position = new Vector3(LevelChooser.transform.position.x + dirX, LevelChooser.transform.position.y + dirY);
+        UIs[1].GetComponent<RectTransform>().anchoredPosition = new Vector3(dirX1, dirY1);
+        LevelChooser.GetComponent<RectTransform>().anchoredPosition = new Vector3(dirX2, dirY2);
 
 
-            yield return null;
-        }
         LevelChooser.SetActive(true);
 
     }

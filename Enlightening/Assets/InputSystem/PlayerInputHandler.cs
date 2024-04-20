@@ -10,8 +10,7 @@ public class PlayerInputHandler : MonoBehaviour
     private PlayerInput playerInput;
 
     public Vector2 RawMovementInput { get; private set; }
-    public Vector2 RawDashDirectionInput { get; private set; }
-    public Vector2Int DashDirectionInput { get; private set; }
+
     public int NormInputX { get; private set; }
     public int NormInputY { get; private set; }
 
@@ -20,9 +19,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public Vector2 InputVector;
 
-    public PlayerDataSO playerDataSO;
-
-    public bool canUseInputs = true;
+    public Tutorial tutorial;
 
     private void Start()
     {
@@ -103,4 +100,14 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
+    public void OnTutorialInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            Debug.Log("Pressed");
+            tutorial.isOpened = !tutorial.isOpened;
+            tutorial.tutorialGO.SetActive(tutorial.isOpened);
+            Time.timeScale = !tutorial.isOpened ? 1 : 0;
+        }
+    }
 }

@@ -18,7 +18,8 @@ public class LevelChooserController : MonoBehaviour, IDataPersistence
         gameData.levels = levelsSO.openedLevels;
     }
 
-    void Update()
+
+    void Awake()
     {
         for (int i = 0; i < levelsSO.openedLevels.Length; i++)
         {

@@ -1400,6 +1400,10 @@ PrefabInstance:
       propertyPath: Map
       value: 
       objectReference: {fileID: 906459033}
+    - target: {fileID: 1503925779315834045, guid: 58c998423bed70f44b01a61f9c831ab7, type: 3}
+      propertyPath: iLevelToOpen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1504861925499402393, guid: 58c998423bed70f44b01a61f9c831ab7, type: 3}
       propertyPath: m_IsActive
       value: 1

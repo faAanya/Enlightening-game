@@ -7,14 +7,6 @@ public class UpgraderSpawner : MonoBehaviour
 
     public ScoreSliderController scoreSliderController;
 
-    private void Start()
-    {
-    }
-    private void Update()
-    {
-
-    }
-
     public void SpawnUpgrader()
     {
         System.Random rnd = new System.Random();
