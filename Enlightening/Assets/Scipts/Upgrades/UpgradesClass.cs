@@ -146,7 +146,7 @@ public class UpgradesClass : MonoBehaviour
                 break;
             case 1:
 
-                str = $" {weapon.weaponName} duration - {System.Math.Round(modifier, 2) * 100}%";
+                str = $" {weapon.weaponName} duration + {System.Math.Round(modifier, 2) * 100}%";
                 break;
             case 2:
 

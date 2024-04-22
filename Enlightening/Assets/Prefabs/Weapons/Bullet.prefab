@@ -175,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mousePos: {x: 0, y: 0, z: 0}
   rb: {fileID: 15060032458110332}
-  force: 4
+  force: 12
   startPos: {x: 0, y: 0, z: 0}
 --- !u!114 &-4656591049736501622
 MonoBehaviour:

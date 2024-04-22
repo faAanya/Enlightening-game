@@ -25,9 +25,9 @@ public class LevelCompletedController : MonoBehaviour
         for (int i = 0; i < levelsSO.openedLevels.Length; i++)
         {
 
-            if (!levelsSO.openedLevels[i])
+            if (levelsSO.openedLevels[i] == false)
             {
-                levelsSO.openedLevels[i] = !levelsSO.openedLevels[i];
+                levelsSO.openedLevels[i] = true;
                 break;
             }
 

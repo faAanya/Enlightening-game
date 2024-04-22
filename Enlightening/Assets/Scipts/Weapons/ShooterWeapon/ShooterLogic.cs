@@ -7,29 +7,23 @@ public class ShooterLogic : WeaponClass
     public override void Start()
     {
         base.Start();
+
+        InvokeRepeating("SpawnBullet", 0f, coolDown);
+
+
     }
     public override void Update()
     {
         Rotate(gameObject, mousePosition);
-        if (canAttack)
-        {
 
-            StartCoroutine(Shoot(coolDown, projectile));
-
-        }
-    }
-
-    private IEnumerator Shoot(float interval, GameObject projectile)
-    {
         canAttack = false;
-        yield return new WaitForSeconds(interval);
-        canAttack = true;
-
-        for (int i = 0; i < number; i++)
-        {
-            GameObject newprojectile = Instantiate(projectile, playerController.transform.position, Quaternion.identity);
-
-        }
-        StartCoroutine(Shoot(interval, projectile));
     }
+
+    public void SpawnBullet()
+    {
+        Instantiate(projectile, playerController.transform.position, Quaternion.identity);
+
+    }
+
+
 }

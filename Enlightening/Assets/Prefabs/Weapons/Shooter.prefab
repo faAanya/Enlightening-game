@@ -78,7 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Shooter
   damage: 10
-  duration: 0.005
+  duration: 1
   coolDown: 3
   size: 0
   number: 2

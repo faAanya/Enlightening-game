@@ -14,7 +14,8 @@ public class TeslaLaserWeaponLogic : WeaponClass
         projectiles = new GameObject[number];
         for (int i = 0, j = 0; i < projectiles.Length && j < 360; i++, j += 360 / projectiles.Length)
         {
-            projectiles[i] = Instantiate(projectile, transform.position, Quaternion.Euler(0, 0, j + 90f));
+            projectiles[i] = Instantiate(projectile, transform);
+            projectiles[i].transform.rotation = Quaternion.Euler(0, 0, j + 90f);
             projectiles[i].transform.SetParent(gameObject.transform);
         }
     }
@@ -34,8 +35,8 @@ public class TeslaLaserWeaponLogic : WeaponClass
 
             for (int i = 0, j = 0; i < number && j < 360; i++, j += 360 / projectiles.Length)
             {
-                Debug.Log(j);
-                projectiles[i] = Instantiate(projectile, transform.position, Quaternion.identity);
+                projectiles[i] = Instantiate(projectile, transform);
+                projectiles[i].transform.rotation = Quaternion.Euler(0, 0, j + 90f);
                 projectiles[i].transform.SetParent(gameObject.transform);
             }
             startNumber = number;

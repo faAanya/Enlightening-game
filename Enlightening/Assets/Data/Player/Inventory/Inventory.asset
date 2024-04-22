@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Inventory
   m_EditorClassIdentifier: 
   staticInventorySize: 3
-  weapons: []
+  weapons:
+  - {fileID: 11400000, guid: ca9e825158e52af40b1d0c65525b50df, type: 2}
   allWeapons:
   - {fileID: 11400000, guid: ca9e825158e52af40b1d0c65525b50df, type: 2}
   - {fileID: 11400000, guid: 588397b57fbd69c45ac319f3d100cf17, type: 2}
