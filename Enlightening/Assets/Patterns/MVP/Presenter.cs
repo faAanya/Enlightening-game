@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 public class Presenter : MonoBehaviour
 {
-
+    public MoneySO money;
     public InventorySO inventorySO;
     public bool canAddWeapon;
 
@@ -20,6 +20,11 @@ public class Presenter : MonoBehaviour
     {
         OnAddButtonClick -= AddWeaponToInventory;
         OnDeleteButtonClick -= DeleteWeaponFromInventory;
+    }
+
+    public void BuyWeapon(WeaponDataSO inventoryItem)
+    {
+        inventoryItem.isOpened = true;
     }
 
     public void AddWeaponToInventory(WeaponDataSO inventoryItem)
@@ -106,12 +111,37 @@ public class Presenter : MonoBehaviour
                 inventoryAndCollectionView.inventoryView.UpdateUI();
             });
         }
+        for (int i = 0; i <= inventoryAndCollectionView.BuyButtons.Count - 1; i++)
+        {
+            int tmp = i;
+            inventoryAndCollectionView.BuyButtons[i].onClick.AddListener(() =>
+            {
+                BuyWeapon(inventoryAndCollectionView.weaponCollectionElements[tmp].GetComponent<WeaponCollectionUI>().weaponSO);
+            });
+        }
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        for (int i = 0; i <= inventoryAndCollectionView.weaponCollectionElements.Count - 1; i++)
+        {
+
+            inventoryAndCollectionView.AddButtons[i].interactable =
+                inventoryAndCollectionView.weaponCollectionElements[i].GetComponent<WeaponCollectionUI>().weaponSO.isOpened;
+
+            if (inventoryAndCollectionView.weaponCollectionElements[i].GetComponent<WeaponCollectionUI>().weaponSO.cost <= money.amount)
+            {
+                inventoryAndCollectionView.BuyButtons[i].interactable = true;
+            }
+            else
+            {
+                inventoryAndCollectionView.BuyButtons[i].interactable = false;
+            }
+
+        }
+
         if (inventorySO.weapons.Count <= inventorySO.staticInventorySize - 1)
         {
             canAddWeapon = true;

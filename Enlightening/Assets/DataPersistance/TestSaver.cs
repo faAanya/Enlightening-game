@@ -7,6 +7,8 @@ public class Saver : MonoBehaviour, IDataPersistence
     public InventorySO inventory;
 
     public LevelsSO levelsSO;
+
+    public MoneySO moneySO;
     public List<WeaponDataSO> weaponClassToSave;
     void Awake()
     {
@@ -17,10 +19,10 @@ public class Saver : MonoBehaviour, IDataPersistence
     }
     public void LoadData(GameData gameData)
     {
-
+        moneySO.amount = gameData.money;
         for (int i = 0; i < gameData.playerWeaponInventory.Count; i++)
         {
-            Debug.Log(gameData.playerWeaponInventory[i].GetInstanceID());
+
             if (gameData.playerWeaponInventory[i].GetInstanceID() == 0)
             {
                 gameData.playerWeaponInventory.RemoveAt(i);
@@ -34,6 +36,7 @@ public class Saver : MonoBehaviour, IDataPersistence
 
     public void SaveData(ref GameData gameData)
     {
+        gameData.money = moneySO.amount;
         gameData.levels = levelsSO.openedLevels;
         weaponClassToSave = new List<WeaponDataSO>();
         for (int i = 0; i < inventory.weapons.Count; i++)

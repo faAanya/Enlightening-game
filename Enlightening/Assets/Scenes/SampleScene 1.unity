@@ -1304,6 +1304,10 @@ PrefabInstance:
       propertyPath: Map
       value: 
       objectReference: {fileID: 906459033}
+    - target: {fileID: 703820402627500146, guid: 58c998423bed70f44b01a61f9c831ab7, type: 3}
+      propertyPath: money
+      value: 
+      objectReference: {fileID: 11400000, guid: 4cc6516740a059449b35998177c69e29, type: 2}
     - target: {fileID: 719027427466245223, guid: 58c998423bed70f44b01a61f9c831ab7, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -1463,6 +1467,22 @@ PrefabInstance:
     - target: {fileID: 2803628868531161938, guid: 58c998423bed70f44b01a61f9c831ab7, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886974348343964089, guid: 58c998423bed70f44b01a61f9c831ab7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886974348343964089, guid: 58c998423bed70f44b01a61f9c831ab7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886974348343964089, guid: 58c998423bed70f44b01a61f9c831ab7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886974348343964089, guid: 58c998423bed70f44b01a61f9c831ab7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3051223021375537294, guid: 58c998423bed70f44b01a61f9c831ab7, type: 3}
       propertyPath: health

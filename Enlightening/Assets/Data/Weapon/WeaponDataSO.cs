@@ -17,6 +17,8 @@ public class WeaponDataSO : ScriptableObject
 
     public GameObject weapon;
 
-    //public bool isOpened;
+    public bool isOpened;
+
+    public float cost;
 
 }

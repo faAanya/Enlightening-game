@@ -17,3 +17,5 @@ MonoBehaviour:
   weaponDescription: Hit everybody with depended by your gravity planets
   isEquiped: 0
   weapon: {fileID: 1889242118292627758, guid: 09ed68571d3ca6346b22a3c5bd178343, type: 3}
+  isOpened: 0
+  cost: 50

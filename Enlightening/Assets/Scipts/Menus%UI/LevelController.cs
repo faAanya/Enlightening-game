@@ -10,11 +10,17 @@ using UnityEngine.UI;
 
 public class LevelController : MonoBehaviour
 {
+    [SerializeField]
+    public MoneySO money;
+
     private SpawnerKillCounter spawnerKillCounter;
     SpawnerOfEnemySpawners spawnerOfEnemySpawners;
     public static int iLevel;
 
     public GameObject Map;
+
+    public Timer timer;
+
     public LevelCompletedUI levelCompletedUI;
 
 
@@ -37,8 +43,9 @@ public class LevelController : MonoBehaviour
             if (Map.transform.localScale.x == Map.GetComponent<MapImageController>().maxSize)
             {
                 if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
-                {
+                {//todo: donot invoke every fucking second pls...
                     levelCompletedUI.ShowUI();
+                    money.amount += timer.CountMoney();
                 }
             }
             else if (Map.transform.localScale.x != Map.GetComponent<MapImageController>().maxSize)

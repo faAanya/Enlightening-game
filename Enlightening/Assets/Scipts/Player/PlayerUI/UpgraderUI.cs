@@ -12,6 +12,9 @@ public class UpgraderUI : MonoBehaviour
     public UpgradesClass upgradesClass;
 
     public GameObject canvas;
+
+    public Timer timer;
+
     public TMP_Text[] upgradesText;
 
     public Button[] buttons;
@@ -24,6 +27,7 @@ public class UpgraderUI : MonoBehaviour
     public void GenerateUI()
     {
 
+        // ;
         for (int i = 0; i < upgradesText.Length; i++)
         {
 
@@ -55,7 +59,7 @@ public class UpgraderUI : MonoBehaviour
                     (upgradesClass.weapons[randomWeaponToUpgrade], randomWeaponUpgrade, weaponModifierUpgrade);
             }
             buttons[i].onClick.RemoveAllListeners();
-            buttons[i].onClick.AddListener(() => { upgradesClass.GenerateUpdate(t, playerIndexUpgrade, playerModifierUpgrade, weaponModifierUpgrade, upgradeToOpen, randomWeaponUpgrade, randomWeaponToUpgrade); Time.timeScale = 1; });
+            buttons[i].onClick.AddListener(() => { upgradesClass.GenerateUpdate(t, playerIndexUpgrade, playerModifierUpgrade, weaponModifierUpgrade, upgradeToOpen, randomWeaponUpgrade, randomWeaponToUpgrade); timer.upgradeCounter++; Time.timeScale = 1; });
             buttons[i].onClick.AddListener(() => canvas.SetActive(false));
         }
 

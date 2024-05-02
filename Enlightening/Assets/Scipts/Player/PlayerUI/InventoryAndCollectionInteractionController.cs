@@ -13,6 +13,7 @@ public class InventoryAndCollectionView : MonoBehaviour
     public GameObject weaponCollectionView;
 
     public List<Button> AddButtons;
+    public List<Button> BuyButtons;
 
     public List<GameObject> weaponCollectionElements;
 
@@ -29,6 +30,7 @@ public class InventoryAndCollectionView : MonoBehaviour
 
             weaponCollectionElements.Add(weaponCollectionView.transform.GetChild(i).gameObject);
             AddButtons.Add(weaponCollectionElements[i].gameObject.transform.GetChild(3).gameObject.GetComponent<Button>());
+            BuyButtons.Add(weaponCollectionElements[i].gameObject.transform.GetChild(4).gameObject.GetComponent<Button>());
         }
 
     }
