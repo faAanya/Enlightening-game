@@ -23,9 +23,12 @@ public class LevelController : MonoBehaviour
 
     public LevelCompletedUI levelCompletedUI;
 
+    public bool uiShowed;
+
 
     void Start()
     {
+        uiShowed = false;
         iLevel = 1;
         spawnerKillCounter = GameObject.FindGameObjectWithTag("SpawnerKillCounter").GetComponent<SpawnerKillCounter>();
         spawnerOfEnemySpawners = GameObject.FindGameObjectWithTag("SpawnerSpawner").GetComponent<SpawnerOfEnemySpawners>();
@@ -42,10 +45,11 @@ public class LevelController : MonoBehaviour
         {
             if (Map.transform.localScale.x == Map.GetComponent<MapImageController>().maxSize)
             {
-                if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+                if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && !uiShowed)
                 {//todo: donot invoke every fucking second pls...
-                    levelCompletedUI.ShowUI();
                     money.amount += timer.CountMoney();
+                    levelCompletedUI.ShowUI();
+                    uiShowed = true;
                 }
             }
             else if (Map.transform.localScale.x != Map.GetComponent<MapImageController>().maxSize)

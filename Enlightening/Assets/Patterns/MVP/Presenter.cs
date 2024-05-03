@@ -117,6 +117,12 @@ public class Presenter : MonoBehaviour
             inventoryAndCollectionView.BuyButtons[i].onClick.AddListener(() =>
             {
                 BuyWeapon(inventoryAndCollectionView.weaponCollectionElements[tmp].GetComponent<WeaponCollectionUI>().weaponSO);
+                BalanceController.OnDecreaseMoney.
+                    Invoke(inventoryAndCollectionView.weaponCollectionElements[tmp].GetComponent<WeaponCollectionUI>().weaponSO.cost);
+
+                inventoryAndCollectionView.BuyButtons[tmp].gameObject.SetActive(false);
+                inventoryAndCollectionView.AddButtons[tmp].gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(250, 0);
+
             });
         }
 

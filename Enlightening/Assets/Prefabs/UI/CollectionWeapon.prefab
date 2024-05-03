@@ -366,6 +366,7 @@ MonoBehaviour:
   weaponNameText: {fileID: 1180825077993112499}
   weaponCostText: {fileID: 1237549404281975677}
   weaponImage: {fileID: 8761372336414367956}
+  buyButton: {fileID: 3455397033714197531}
 --- !u!1 &5273356769462449232
 GameObject:
   m_ObjectHideFlags: 0

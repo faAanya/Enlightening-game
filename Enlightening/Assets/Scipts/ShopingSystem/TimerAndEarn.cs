@@ -25,7 +25,7 @@ public class Timer : MonoBehaviour
 
     public float CountMoney()
     {
-        return 1 / time * 10800 + upgradeCounter * 10;
+        return 1 / time * 150 + upgradeCounter * 10;
     }
 
 }

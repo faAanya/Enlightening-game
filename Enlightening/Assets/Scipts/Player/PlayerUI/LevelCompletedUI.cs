@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelCompletedUI : MonoBehaviour
 {
-    float startMoney;
+    public float startMoney;
     public MoneySO money;
     public GameObject levelCompletedUI;
     public GameObject Map;
@@ -28,7 +28,7 @@ public class LevelCompletedUI : MonoBehaviour
 
     public void ShowUI()
     {
-        levelCompletedUI.GetComponent<LevelCompletedController>().earnedMoney.text = $"Earned moeny{money.amount - startMoney}";
+        levelCompletedUI.GetComponent<LevelCompletedController>().earnedMoney.text = $"Earned money: {money.amount - startMoney}";
         levelCompletedUI.SetActive(true);
         Time.timeScale = 0;
     }
