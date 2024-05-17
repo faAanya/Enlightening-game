@@ -18,4 +18,4 @@ MonoBehaviour:
   isEquiped: 0
   weapon: {fileID: 7281374905529682349, guid: 8ef02c42c7eee684fb0c671119e961d9, type: 3}
   isOpened: 0
-  cost: 0
+  cost: 10

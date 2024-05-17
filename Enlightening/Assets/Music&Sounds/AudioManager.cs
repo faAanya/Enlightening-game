@@ -46,13 +46,6 @@ public class AudioManager : MonoBehaviour, IDataPersistence
             Destroy(gameObject);
         }
 
-
-        // if (Instance != null)
-        // {
-        //     Debug.LogError("More than one Audio Manager in the scene");
-        // }
-        // Instance = this;
-
         eventInstances = new List<EventInstance>();
         eventEmitters = new List<StudioEventEmitter>();
 
@@ -67,7 +60,6 @@ public class AudioManager : MonoBehaviour, IDataPersistence
         masterBus.setVolume(masterVolume);
         musicBus.setVolume(musicVolume);
         sfxBus.setVolume(sfxVolume);
-
     }
 
     public void PlayOneShot(EventReference sound, Vector3 worldPos)

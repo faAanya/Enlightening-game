@@ -28,7 +28,7 @@ public class LevelCompletedUI : MonoBehaviour
 
     public void ShowUI()
     {
-        levelCompletedUI.GetComponent<LevelCompletedController>().earnedMoney.text = $"Earned money: {money.amount - startMoney}";
+        levelCompletedUI.GetComponent<LevelCompletedController>().earnedMoney.text = $"Earned money: {Mathf.Round(money.amount - startMoney)}";
         levelCompletedUI.SetActive(true);
         Time.timeScale = 0;
     }

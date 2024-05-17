@@ -10,6 +10,6 @@ public class BalanceUI : MonoBehaviour
 
     void Update()
     {
-        monetText.text = $"Orbs: {money.amount}";
+        monetText.text = $"Orbs: {Mathf.Round(money.amount)}";
     }
 }

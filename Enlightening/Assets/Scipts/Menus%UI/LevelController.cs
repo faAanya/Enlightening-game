@@ -46,7 +46,7 @@ public class LevelController : MonoBehaviour
             if (Map.transform.localScale.x == Map.GetComponent<MapImageController>().maxSize)
             {
                 if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && !uiShowed)
-                {//todo: donot invoke every fucking second pls...
+                {
                     money.amount += timer.CountMoney();
                     levelCompletedUI.ShowUI();
                     uiShowed = true;

@@ -16,7 +16,7 @@ public class GameData
 
     public GameData()
     {
-        money = 0;
+        money = 100;
         levels = new bool[2];
         levels[0] = true;
         musicSettings = new List<float>(3);
