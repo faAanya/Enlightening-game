@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Player_en-US
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-US
+  m_SharedData: {fileID: 11400000, guid: a68b57e4896a19e4aa24a1a124706d4d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 5274615808
+    m_Localized: "You've been \nblown up"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 128092225536
+    m_Localized: Try Again
+    m_Metadata:
+      m_Items: []
+  - m_Id: 192801947648
+    m_Localized: 'Quit to Main Menu
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 313069420544
+    m_Localized: Path Completed!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1500162310144
+    m_Localized: WASD, Arrows - Move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1542218596352
+    m_Localized: Tab - Open/Close Minimap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1568986644480
+    m_Localized: Mouse - Weapon Direction Control
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1554759565312
+    m_Localized: T - Open/Close Tutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1585277321216
+    m_Localized: Esc - Pause Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1614285127680
+    m_Localized: F - Page Back In Menues
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4133971312640
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4235272142848
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5845608054784
+    m_Localized: 'Earned money:'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

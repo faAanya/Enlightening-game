@@ -10,36 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: Collection_en-US
+  m_Name: LevelChooser_ru-RU
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: en-US
-  m_SharedData: {fileID: 11400000, guid: ccb8cbc1f0de476429de9260382cd27d, type: 2}
+    m_Code: ru-RU
+  m_SharedData: {fileID: 11400000, guid: aa44fab8c95a4a34986b1a9515b5e4ba, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 6763593728
-    m_Localized: Collection
+  - m_Id: 6293831680
+    m_Localized: "\u041C\u043B\u0435\u0447\u043D\u044B\u0439 \u043F\u0443\u0442\u044C"
     m_Metadata:
       m_Items: []
-  - m_Id: 80826613760
-    m_Localized: Buy
-    m_Metadata:
-      m_Items: []
-  - m_Id: 127899287552
-    m_Localized: Equip
-    m_Metadata:
-      m_Items: []
-  - m_Id: 183922606080
-    m_Localized: Delete
-    m_Metadata:
-      m_Items: []
-  - m_Id: 266722361344
-    m_Localized: Orbs.
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1948868952064
-    m_Localized: Accept
+  - m_Id: 103383580672
+    m_Localized: "\u0412\u043E\u043B\u043E\u043F\u0430\u0441"
     m_Metadata:
       m_Items: []
   references:

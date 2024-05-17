@@ -31,6 +31,18 @@ MonoBehaviour:
     - Locale-ru-RU
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 333a2d9c9ac81ec4a87f7b24c2a10260
+    m_Address: LevelChooser_ru-RU
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru-RU
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3a6ca047e4c1f14a95368b18b2fe4e0
+    m_Address: Player_ru-RU
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru-RU
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 8cfc155db24b02e4d956a07b065fae6f, type: 2}
   m_SchemaSet:

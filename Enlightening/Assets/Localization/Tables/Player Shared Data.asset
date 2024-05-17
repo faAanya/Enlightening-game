@@ -10,67 +10,71 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: TitlePage Shared Data
+  m_Name: Player Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: TitlePage
-  m_TableCollectionNameGuidString: 12ca9242a185af947b6b0eaafd86d1ee
+  m_TableCollectionName: Player
+  m_TableCollectionNameGuidString: a68b57e4896a19e4aa24a1a124706d4d
   m_Entries:
-  - m_Id: 58194149376
-    m_Key: startKey
+  - m_Id: 5274615808
+    m_Key: deathKey
     m_Metadata:
       m_Items: []
-  - m_Id: 232840773632
-    m_Key: settingsKey
+  - m_Id: 128092225536
+    m_Key: restartKey
     m_Metadata:
       m_Items: []
-  - m_Id: 301006602240
-    m_Key: quitKey
+  - m_Id: 192801947648
+    m_Key: quitToMenuKey
     m_Metadata:
       m_Items: []
-  - m_Id: 401850253312
-    m_Key: collectionKey
+  - m_Id: 313069420544
+    m_Key: pathKey
     m_Metadata:
       m_Items: []
-  - m_Id: 1316846059520
-    m_Key: musicSettingsKey
+  - m_Id: 1500162310144
+    m_Key: WASD
     m_Metadata:
       m_Items: []
-  - m_Id: 2714862108672
-    m_Key: allSoundsKey
+  - m_Id: 1542218596352
+    m_Key: Tab
     m_Metadata:
       m_Items: []
-  - m_Id: 2839026089984
-    m_Key: musicKey
+  - m_Id: 1554759565312
+    m_Key: T
     m_Metadata:
       m_Items: []
-  - m_Id: 2938368180224
-    m_Key: sfxKey
+  - m_Id: 1568986644480
+    m_Key: Mouse
     m_Metadata:
       m_Items: []
-  - m_Id: 4290037170176
-    m_Key: creditsKey
+  - m_Id: 1585277321216
+    m_Key: Esc
     m_Metadata:
       m_Items: []
-  - m_Id: 4318273224704
-    m_Key: programmerKey
+  - m_Id: 1614285127680
+    m_Key: F
     m_Metadata:
       m_Items: []
-  - m_Id: 4339274104832
-    m_Key: soundDesKey
+  - m_Id: 4133971312640
+    m_Key: pauseKey
     m_Metadata:
       m_Items: []
-  - m_Id: 19765274099712
-    m_Key: Loc
+  - m_Id: 4235272142848
+    m_Key: resumeKeu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5845608054784
+    m_Key: earnsKey
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 2250920605525737496
+    rid: 2250920605525737517
   references:
     version: 2
     RefIds:
-    - rid: 2250920605525737496
+    - rid: 2250920605525737517
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1715965634311
+        m_CustomEpoch: 1715968267341
