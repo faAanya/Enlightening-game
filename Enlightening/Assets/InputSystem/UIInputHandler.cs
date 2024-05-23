@@ -16,17 +16,22 @@ public class UIInputHandler : MonoBehaviour
         if (context.started)
         {
             pressCounter++;
-            if (pressCounter == 1 && mainMenuController.isLevelChooser)
-            {
-                mainMenuController.MoveLevelChooser(0, 0, 800, 0);
-                mainMenuController.isCollection = true;
-                mainMenuController.isLevelChooser = false;
-            }
-            else if (pressCounter == 2 && mainMenuController.isCollection)
+            if (pressCounter == 1 && mainMenuController.isCollection)
             {
                 mainMenuController.MoveMainButtons(0, 0, 0, -450);
-                mainMenuController.isTitle = true;
+
                 mainMenuController.isCollection = false;
+                mainMenuController.isLevelChooser = false;
+                mainMenuController.isTitle = true;
+
+            }
+            else if (pressCounter == 2 && mainMenuController.isLevelChooser)
+            {
+                mainMenuController.MoveLevelChooser(0, 0, -800, 0);
+                // mainMenuController.MoveMainButtons(0, 0, 0, -450);
+                mainMenuController.isTitle = false;
+                mainMenuController.isLevelChooser = false;
+                mainMenuController.isCollection = true;
                 pressCounter = 0;
             }
             else
