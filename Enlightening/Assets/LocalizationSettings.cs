@@ -1,47 +1,47 @@
 
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 
-
-public class LocalizationS : MonoBehaviour
+[System.Serializable]
+public class LocalizationS : MonoBehaviour, IDataPersistence
 {
-
+    public static LocalizationS localizationSetter;
+    public int localisation;
     private void Start()
     {
-        int ID = PlayerPrefs.GetInt("LocaleKey", 1);
-        ChangeLocale(ID);
+        // StartCoroutine(SetLocale(localisation));
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[localisation];
+        Debug.Log(LocalizationSettings.SelectedLocale);
     }
-    public bool isEnglish = false;
-    private bool active = false;
-    public void ChangeLocale(int ID)
+    public void ChangeLocale()
     {
-        if (active)
+        if (localisation == 1) //English to Russian
         {
-            return;
-        }
-        if (isEnglish)
-        {
-            ID = 1;
-            StartCoroutine(SetLocale(ID));
+            localisation = 0;
         }
         else
         {
-            ID = 0;
-            StartCoroutine(SetLocale(ID));
+            localisation = 1; //Russian to English
         }
-
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[localisation];
 
     }
     public IEnumerator SetLocale(int localeID)
     {
-
-        isEnglish = !isEnglish;
-        active = true;
         yield return LocalizationSettings.InitializationOperation;
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[localeID];
-        PlayerPrefs.SetInt("LocaleKey", localeID);
-        active = false;
+    }
+
+    public void LoadData(GameData gameData)
+    {
+        localisation = gameData.localisationLang;
+    }
+
+    public void SaveData(ref GameData gameData)
+    {
+        gameData.localisationLang = localisation;
     }
 }

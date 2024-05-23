@@ -10,49 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: Collection Shared Data
+  m_Name: Weapons Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: Collection
-  m_TableCollectionNameGuidString: ccb8cbc1f0de476429de9260382cd27d
+  m_TableCollectionName: Weapons
+  m_TableCollectionNameGuidString: b46fef0a5f3addd4098eb6952a96747f
   m_Entries:
-  - m_Id: 6763593728
-    m_Key: collectionKey
+  - m_Id: 4888739840
+    m_Key: shooterKey
     m_Metadata:
       m_Items: []
-  - m_Id: 127899287552
-    m_Key: equipKey
+  - m_Id: 4931732127744
+    m_Key: teslaKey
     m_Metadata:
       m_Items: []
-  - m_Id: 183922606080
-    m_Key: deleteKey
-    m_Metadata:
-      m_Items: []
-  - m_Id: 266722361344
-    m_Key: orbsKey
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1948868952064
-    m_Key: acceptKey
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1668267037179904
-    m_Key: 'weaponCost
-
-'
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2040063003475968
-    m_Key: buy
+  - m_Id: 4983657611264
+    m_Key: gravityKey
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 2250920605525737507
+    rid: 2250920731608350724
   references:
     version: 2
     RefIds:
-    - rid: 2250920605525737507
+    - rid: 2250920731608350724
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1715966958144
+        m_CustomEpoch: 1716452226632

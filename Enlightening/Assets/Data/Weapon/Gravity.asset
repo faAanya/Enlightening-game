@@ -13,9 +13,20 @@ MonoBehaviour:
   m_Name: Gravity
   m_EditorClassIdentifier: 
   weaponImage: {fileID: 21300000, guid: 72ec73f856c986f4baad7bb4b48ff370, type: 3}
-  weaponName: Gravitation
+  nameKey:
+    m_TableReference:
+      m_TableCollectionName: GUID:b46fef0a5f3addd4098eb6952a96747f
+    m_TableEntryReference:
+      m_KeyId: 4983657611264
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   weaponDescription: Hit everybody with depended by your gravity planets
   isEquiped: 0
   weapon: {fileID: 1889242118292627758, guid: 09ed68571d3ca6346b22a3c5bd178343, type: 3}
   isOpened: 0
   cost: 50
+  references:
+    version: 2
+    RefIds: []

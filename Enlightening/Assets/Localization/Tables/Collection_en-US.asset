@@ -22,10 +22,6 @@ MonoBehaviour:
     m_Localized: Collection
     m_Metadata:
       m_Items: []
-  - m_Id: 80826613760
-    m_Localized: Buy
-    m_Metadata:
-      m_Items: []
   - m_Id: 127899287552
     m_Localized: Equip
     m_Metadata:
@@ -40,6 +36,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1948868952064
     m_Localized: Accept
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1668267037179904
+    m_Localized: orbs.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2040063003475968
+    m_Localized: Buy
     m_Metadata:
       m_Items: []
   references:

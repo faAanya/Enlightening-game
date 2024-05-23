@@ -11,6 +11,7 @@ public class UIInputHandler : MonoBehaviour
     private int pressCounter = 0;
     public void OnMenuMove(InputAction.CallbackContext context)
     {
+
         Debug.Log("Pressed");
         if (context.started)
         {
