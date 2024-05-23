@@ -16,7 +16,7 @@ public class UIInputHandler : MonoBehaviour
         if (context.started)
         {
             pressCounter++;
-            if (pressCounter == 1 && mainMenuController.isCollection)
+            if (mainMenuController.isCollection)
             {
                 mainMenuController.MoveMainButtons(0, 0, 0, -450);
 
@@ -25,7 +25,7 @@ public class UIInputHandler : MonoBehaviour
                 mainMenuController.isTitle = true;
 
             }
-            else if (pressCounter == 2 && mainMenuController.isLevelChooser)
+            else if (mainMenuController.isLevelChooser)
             {
                 mainMenuController.MoveLevelChooser(0, 0, -800, 0);
                 // mainMenuController.MoveMainButtons(0, 0, 0, -450);
